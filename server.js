@@ -55,43 +55,7 @@ setInterval(() => {
     });
 }, 21600);
 
-let realm = [
-  { realm: "archimonde", zone: "fr" },
-  { realm: "arathi", zone: "fr" },
-  { realm: "Arak-arahm", zone: "fr" },
-  { realm: "Chants éternels", zone: "fr" },
-  { realm: "Cho'gall", zone: "fr" },
-  { realm: "Confrérie du Thorium", zone: "fr" },
-  { realm: "Culte de la Rive noire", zone: "fr" },
-  { realm: "Dalaran", zone: "fr" },
-  { realm: "Drek'Thar", zone: "fr" },
-  { realm: "Eitrigg", zone: "fr" },
-  { realm: "Eldre'Thalas", zone: "fr" },
-  { realm: "Elune", zone: "fr" },
-  { realm: "Garona", zone: "fr" },
-  { realm: "Hyjal", zone: "fr" },
-  { realm: "Illidan", zone: "fr" },
-  { realm: "Kael'thas", zone: "fr" },
-  { realm: "Khaz Modan", zone: "fr" },
-  { realm: "Kirin Tor", zone: "fr" },
-  { realm: "Krasus", zone: "fr" },
-  { realm: "La Croisade écarlate", zone: "fr" },
-  { realm: "Les Clairvoyants", zone: "fr" },
-  { realm: "Les Sentinelles", zone: "fr" },
-  { realm: "Marécage de Zangar", zone: "fr" },
-  { realm: "Medivh", zone: "fr" },
-  { realm: "Naxxramas", zone: "fr" },
-  { realm: "Ner'zhul", zone: "fr" },
-  { realm: "Rashgarroth", zone: "fr" },
-  { realm: "Sargeras", zone: "fr" },
-  { realm: "Sinstralis", zone: "fr" },
-  { realm: "Suramar", zone: "fr" },
-  { realm: "Temple noir", zone: "fr" },
-  { realm: "Throk'Feroth", zone: "fr" },
-  { realm: "Uldaman", zone: "fr" },
-  { realm: "Varimathras", zone: "fr" },
-  { realm: "Vol'jin", zone: "fr" },
-  { realm: "Ysondre", zone: "fr" }
+let realm_fr = [
   { realm: "Aegwynn", zone: "ge" },
   { realm: "Alexstrasza", zone: "ge" },
   { realm: "Alleria", zone: "ge" },
@@ -178,6 +142,45 @@ let realm = [
   { realm: "Zuluhed", zone: "ge" }
 ];
 
+let realm = [
+  { realm: "archimonde", zone: "fr" },
+  { realm: "arathi", zone: "fr" },
+  { realm: "Arak-arahm", zone: "fr" },
+  { realm: "Chants éternels", zone: "fr" },
+  { realm: "Cho'gall", zone: "fr" },
+  { realm: "Confrérie du Thorium", zone: "fr" },
+  { realm: "Culte de la Rive noire", zone: "fr" },
+  { realm: "Dalaran", zone: "fr" },
+  { realm: "Drek'Thar", zone: "fr" },
+  { realm: "Eitrigg", zone: "fr" },
+  { realm: "Eldre'Thalas", zone: "fr" },
+  { realm: "Elune", zone: "fr" },
+  { realm: "Garona", zone: "fr" },
+  { realm: "Hyjal", zone: "fr" },
+  { realm: "Illidan", zone: "fr" },
+  { realm: "Kael'thas", zone: "fr" },
+  { realm: "Khaz Modan", zone: "fr" },
+  { realm: "Kirin Tor", zone: "fr" },
+  { realm: "Krasus", zone: "fr" },
+  { realm: "La Croisade écarlate", zone: "fr" },
+  { realm: "Les Clairvoyants", zone: "fr" },
+  { realm: "Les Sentinelles", zone: "fr" },
+  { realm: "Marécage de Zangar", zone: "fr" },
+  { realm: "Medivh", zone: "fr" },
+  { realm: "Naxxramas", zone: "fr" },
+  { realm: "Ner'zhul", zone: "fr" },
+  { realm: "Rashgarroth", zone: "fr" },
+  { realm: "Sargeras", zone: "fr" },
+  { realm: "Sinstralis", zone: "fr" },
+  { realm: "Suramar", zone: "fr" },
+  { realm: "Temple noir", zone: "fr" },
+  { realm: "Throk'Feroth", zone: "fr" },
+  { realm: "Uldaman", zone: "fr" },
+  { realm: "Varimathras", zone: "fr" },
+  { realm: "Vol'jin", zone: "fr" },
+  { realm: "Ysondre", zone: "fr" }
+];
+
 let urls = [];
 
 const getUrls = async () => {
@@ -220,7 +223,7 @@ const makeRequestsFromArray = arr => {
       .then(res => {
         index++;
         res.data.auctions.map(item => {
-          if (item.item === 1121 && item.bonusLists === 3901) {
+          if (item.item === 1121) {
             console.log(item);
           }
         });
