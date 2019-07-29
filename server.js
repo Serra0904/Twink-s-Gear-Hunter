@@ -4,11 +4,9 @@ const bodyParser = require("body-parser");
 const passport = require("passport");
 const axios = require("axios");
 const users = require("./routes/api/users");
-const scanner = require("./routes/api/scanner");
 const app = express();
 const keys = require("./config/keys");
 
-// Bodyparser middleware
 app.use(
   bodyParser.urlencoded({
     extended: false
@@ -93,7 +91,7 @@ let realm = [
   { realm: "Uldaman", zone: "fr" },
   { realm: "Varimathras", zone: "fr" },
   { realm: "Vol'jin", zone: "fr" },
-  { realm: "Ysondre", zone: "fr" },
+  { realm: "Ysondre", zone: "fr" }
   { realm: "Aegwynn", zone: "ge" },
   { realm: "Alexstrasza", zone: "ge" },
   { realm: "Alleria", zone: "ge" },
