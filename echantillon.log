@@ -1,0 +1,515 @@
+MongoDB successfully connected
+[0] USDpydF7Bg9326Ssj6zxFgTIQfwnSMkbJ5
+[0] error :  /wow/auction/data/Suramar?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Drek%27Thar?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Sargeras?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Die%20Silberne%20Hand?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Les%20Sentinelles?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Eldre%27Thalas?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Les%20Clairvoyants?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Garona?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Kargath?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Varimathras?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Ner%27zhul?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Elune?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Vol%27jin?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Temple%20noir?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Illidan?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Confrérie%20du%20Thorium?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Throk%27Feroth?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Medivh?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Cho%27gall?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Arak-arahm?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Chants%20éternels?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Rashgarroth?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Azshara?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Sinstralis?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Der%20Rat%20von%20Dalaran?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Lordaeron?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/arathi?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Uldaman?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Forscherliga?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Kael%27thas?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Durotan?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Ulduar?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Teldrassil?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Tirion?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Perenolde?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Naxxramas?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Die%20Nachtwache?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Todeswache?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Gorgonnash?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Mannoroth?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Khaz%27goroth?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Krasus?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Der%20Mithrilorden?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Eitrigg?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Alexstrasza?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Ambossar?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Tichondrius?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Rajaxx?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Nefarian?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Arygos?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Nera%27thor?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Taerar?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Kirin%20Tor?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Mal%27Ganis?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Anub%27arak?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Zirkel%20des%20Cenarius?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Zuluhed?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Anetheron?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Echsenkessel?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Lothar?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Baelgun?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Frostmourne?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Nathrezim?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Proudmoore?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Festung%20der%20Stürme?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Nazjatar?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Madmortem?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Gul%27dan?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Area%2052?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Nethersturm?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Culte%20de%20la%20Rive%20noire?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Dalvengyr?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/La%20Croisade%20écarlate?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Kil%27jaeden?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Un%27Goro?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Malorne?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Kel%27Thuzad?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Onyxia?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Vek%27lor?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Arthas?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Wrathbringer?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Dethecus?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Theradras?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Terrordar?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Mug%27thol?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Blutkessel?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Das%20Syndikat?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Die%20Todeskrallen?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Kult%20der%20Verdammten?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Aman%27Thul?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Ysera?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Der%20abyssische%20Rat?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] { auc: 1506234491,
+[0]   item: 1121,
+[0]   owner: 'Omegayahud',
+[0]   ownerRealm: 'Khaz Modan',
+[0]   bid: 77067222,
+[0]   buyout: 77067222,
+[0]   quantity: 1,
+[0]   timeLeft: 'VERY_LONG',
+[0]   rand: 0,
+[0]   seed: 0,
+[0]   context: 54,
+[0]   bonusLists: [ { bonusListId: 4269 } ],
+[0]   modifiers: [ { type: 9, value: 115 } ] }
+[0] error :  /wow/auction/data/Garrosh?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Nozdormu?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Shattrath?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Norgannon?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Ysondre?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] error :  /wow/auction/data/Marécage%20de%20Zangar?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] { auc: 1295661531,
+[0]   item: 1121,
+[0]   owner: 'Hexenbankz',
+[0]   ownerRealm: 'Rexxar',
+[0]   bid: 304495902,
+[0]   buyout: 304495902,
+[0]   quantity: 1,
+[0]   timeLeft: 'VERY_LONG',
+[0]   rand: 0,
+[0]   seed: 0,
+[0]   context: 43,
+[0]   bonusLists: [ { bonusListId: 4268 } ],
+[0]   modifiers: [ { type: 9, value: 54 } ] }
+[0] { auc: 1294973926,
+[0]   item: 1121,
+[0]   owner: 'Kirianosch',
+[0]   ownerRealm: 'Malygos',
+[0]   bid: 97763043,
+[0]   buyout: 116384576,
+[0]   quantity: 1,
+[0]   timeLeft: 'VERY_LONG',
+[0]   rand: 0,
+[0]   seed: 0,
+[0]   context: 53,
+[0]   bonusLists: [ { bonusListId: 4269 } ],
+[0]   modifiers: [ { type: 9, value: 110 } ] }
+[0] error :  /wow/auction/data/Dun%20Morogh?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] { auc: 1506079964,
+[0]   item: 1121,
+[0]   owner: 'Nili',
+[0]   ownerRealm: 'Dalaran',
+[0]   bid: 293085464,
+[0]   buyout: 293085464,
+[0]   quantity: 1,
+[0]   timeLeft: 'VERY_LONG',
+[0]   rand: 0,
+[0]   seed: 0,
+[0]   context: 0 }
+[0] { auc: 1506612503,
+[0]   item: 1121,
+[0]   owner: 'Nimey',
+[0]   ownerRealm: 'Marécage de Zangar',
+[0]   bid: 198850190,
+[0]   buyout: 209315990,
+[0]   quantity: 1,
+[0]   timeLeft: 'VERY_LONG',
+[0]   rand: 0,
+[0]   seed: 0,
+[0]   context: 0 }
+[0] { auc: 618561321,
+[0]   item: 1121,
+[0]   owner: 'Ntbank',
+[0]   ownerRealm: 'Frostwolf',
+[0]   bid: 96334027,
+[0]   buyout: 96334027,
+[0]   quantity: 1,
+[0]   timeLeft: 'VERY_LONG',
+[0]   rand: 0,
+[0]   seed: 0,
+[0]   context: 0 }
+[0] { auc: 618562562,
+[0]   item: 1121,
+[0]   owner: 'Ntbank',
+[0]   ownerRealm: 'Frostwolf',
+[0]   bid: 96334027,
+[0]   buyout: 96334027,
+[0]   quantity: 1,
+[0]   timeLeft: 'VERY_LONG',
+[0]   rand: 0,
+[0]   seed: 0,
+[0]   context: 37,
+[0]   bonusLists: [ { bonusListId: 3942 } ],
+[0]   modifiers: [ { type: 9, value: 43 } ] }
+[0] { auc: 618263414,
+[0]   item: 1121,
+[0]   owner: 'Aoste',
+[0]   ownerRealm: 'Frostwolf',
+[0]   bid: 96334028,
+[0]   buyout: 96334028,
+[0]   quantity: 1,
+[0]   timeLeft: 'VERY_LONG',
+[0]   rand: 0,
+[0]   seed: 0,
+[0]   context: 53,
+[0]   bonusLists: [ { bonusListId: 4269 } ],
+[0]   modifiers: [ { type: 9, value: 110 } ] }
+[0] { auc: 1294973926,
+[0]   item: 1121,
+[0]   owner: 'Kirianosch',
+[0]   ownerRealm: 'Malygos',
+[0]   bid: 97763043,
+[0]   buyout: 116384576,
+[0]   quantity: 1,
+[0]   timeLeft: 'VERY_LONG',
+[0]   rand: 0,
+[0]   seed: 0,
+[0]   context: 53,
+[0]   bonusLists: [ { bonusListId: 4269 } ],
+[0]   modifiers: [ { type: 9, value: 110 } ] }
+[0] { auc: 618286017,
+[0]   item: 1121,
+[0]   owner: 'Yeeticus',
+[0]   ownerRealm: 'Eredar',
+[0]   bid: 29999000,
+[0]   buyout: 39999000,
+[0]   quantity: 1,
+[0]   timeLeft: 'LONG',
+[0]   rand: 0,
+[0]   seed: 0,
+[0]   context: 0 }
+[0] { auc: 618656581,
+[0]   item: 1121,
+[0]   owner: 'Meruun',
+[0]   ownerRealm: 'Eredar',
+[0]   bid: 39998999,
+[0]   buyout: 39998999,
+[0]   quantity: 1,
+[0]   timeLeft: 'LONG',
+[0]   rand: 0,
+[0]   seed: 0,
+[0]   context: 1 }
+[0] { auc: 1295661531,
+[0]   item: 1121,
+[0]   owner: 'Hexenbankz',
+[0]   ownerRealm: 'Rexxar',
+[0]   bid: 304495902,
+[0]   buyout: 304495902,
+[0]   quantity: 1,
+[0]   timeLeft: 'VERY_LONG',
+[0]   rand: 0,
+[0]   seed: 0,
+[0]   context: 43,
+[0]   bonusLists: [ { bonusListId: 4268 } ],
+[0]   modifiers: [ { type: 9, value: 54 } ] }
+[0] { auc: 92699670,
+[0]   item: 1121,
+[0]   owner: 'Orcesta',
+[0]   ownerRealm: 'Archimonde',
+[0]   bid: 144501042,
+[0]   buyout: 144501042,
+[0]   quantity: 1,
+[0]   timeLeft: 'VERY_LONG',
+[0]   rand: 0,
+[0]   seed: 0,
+[0]   context: 53,
+[0]   bonusLists: [ { bonusListId: 4269 } ],
+[0]   modifiers: [ { type: 9, value: 120 } ] }
+[0] { auc: 93097455,
+[0]   item: 1121,
+[0]   owner: 'Stilkost',
+[0]   ownerRealm: 'Archimonde',
+[0]   bid: 144501041,
+[0]   buyout: 144501041,
+[0]   quantity: 1,
+[0]   timeLeft: 'VERY_LONG',
+[0]   rand: 0,
+[0]   seed: 0,
+[0]   context: 53,
+[0]   bonusLists: [ { bonusListId: 4269 } ],
+[0]   modifiers: [ { type: 9, value: 120 } ] }
+[0] { auc: 92703478,
+[0]   item: 1121,
+[0]   owner: 'Orcesta',
+[0]   ownerRealm: 'Archimonde',
+[0]   bid: 144501042,
+[0]   buyout: 144501042,
+[0]   quantity: 1,
+[0]   timeLeft: 'VERY_LONG',
+[0]   rand: 0,
+[0]   seed: 0,
+[0]   context: 54,
+[0]   bonusLists: [ { bonusListId: 4269 } ],
+[0]   modifiers: [ { type: 9, value: 120 } ] }
+[0] { auc: 92630818,
+[0]   item: 1121,
+[0]   owner: 'Tadlarina',
+[0]   ownerRealm: 'Aegwynn',
+[0]   bid: 83871360,
+[0]   buyout: 83871360,
+[0]   quantity: 1,
+[0]   timeLeft: 'LONG',
+[0]   rand: 0,
+[0]   seed: 0,
+[0]   context: 54,
+[0]   bonusLists: [ { bonusListId: 4269 } ],
+[0]   modifiers: [ { type: 9, value: 86 } ] }
+[0] error :  /wow/auction/data/Die%20Aldor?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
+[0] { auc: 92071086,
+[0]   item: 1121,
+[0]   owner: 'Camalina',
+[0]   ownerRealm: 'Hyjal',
+[0]   bid: 134385968,
+[0]   buyout: 144501041,
+[0]   quantity: 1,
+[0]   timeLeft: 'VERY_LONG',
+[0]   rand: 0,
+[0]   seed: 0,
+[0]   context: 54,
+[0]   bonusLists: [ { bonusListId: 4269 } ],
+[0]   modifiers: [ { type: 9, value: 120 } ] }
+[0] { auc: 91821665,
+[0]   item: 1121,
+[0]   owner: 'Rungolds',
+[0]   ownerRealm: 'Hyjal',
+[0]   bid: 474999830,
+[0]   buyout: 499999822,
+[0]   quantity: 1,
+[0]   timeLeft: 'VERY_LONG',
+[0]   rand: 0,
+[0]   seed: 0,
+[0]   context: 1 }
+[0] { auc: 91821667,
+[0]   item: 1121,
+[0]   owner: 'Rungolds',
+[0]   ownerRealm: 'Hyjal',
+[0]   bid: 474999830,
+[0]   buyout: 499999822,
+[0]   quantity: 1,
+[0]   timeLeft: 'VERY_LONG',
+[0]   rand: 0,
+[0]   seed: 0,
+[0]   context: 1 }
+[0] { auc: 91821666,
+[0]   item: 1121,
+[0]   owner: 'Rungolds',
+[0]   ownerRealm: 'Hyjal',
+[0]   bid: 474999830,
+[0]   buyout: 499999822,
+[0]   quantity: 1,
+[0]   timeLeft: 'VERY_LONG',
+[0]   rand: 0,
+[0]   seed: 0,
+[0]   context: 1 }
+[0] { auc: 618686091,
+[0]   item: 1121,
+[0]   owner: 'Junio',
+[0]   ownerRealm: 'Blackhand',
+[0]   bid: 110320943,
+[0]   buyout: 118624670,
+[0]   quantity: 1,
+[0]   timeLeft: 'VERY_LONG',
+[0]   rand: 0,
+[0]   seed: 0,
+[0]   context: 0 }
+[0] { auc: 618702391,
+[0]   item: 1121,
+[0]   owner: 'Bâtor',
+[0]   ownerRealm: 'Blackhand',
+[0]   bid: 216167538,
+[0]   buyout: 216167538,
+[0]   quantity: 1,
+[0]   timeLeft: 'VERY_LONG',
+[0]   rand: 0,
+[0]   seed: 0,
+[0]   context: 54,
+[0]   bonusLists: [ { bonusListId: 4270 } ],
+[0]   modifiers: [ { type: 9, value: 111 } ] }
+[0] { auc: 618702349,
+[0]   item: 1121,
+[0]   owner: 'Bâtor',
+[0]   ownerRealm: 'Blackhand',
+[0]   bid: 216167538,
+[0]   buyout: 216167538,
+[0]   quantity: 1,
+[0]   timeLeft: 'VERY_LONG',
+[0]   rand: 0,
+[0]   seed: 0,
+[0]   context: 54,
+[0]   bonusLists: [ { bonusListId: 4269 } ],
+[0]   modifiers: [ { type: 9, value: 111 } ] }
+[0] { auc: 618702350,
+[0]   item: 1121,
+[0]   owner: 'Bâtor',
+[0]   ownerRealm: 'Blackhand',
+[0]   bid: 216167538,
+[0]   buyout: 216167538,
+[0]   quantity: 1,
+[0]   timeLeft: 'VERY_LONG',
+[0]   rand: 0,
+[0]   seed: 0,
+[0]   context: 54,
+[0]   bonusLists: [ { bonusListId: 4269 } ],
+[0]   modifiers: [ { type: 9, value: 111 } ] }
+[0] { auc: 617907976,
+[0]   item: 1121,
+[0]   owner: 'Waibsbild',
+[0]   ownerRealm: 'Blackhand',
+[0]   bid: 106807203,
+[0]   buyout: 118674671,
+[0]   quantity: 1,
+[0]   timeLeft: 'VERY_LONG',
+[0]   rand: 0,
+[0]   seed: 0,
+[0]   context: 54,
+[0]   bonusLists: [ { bonusListId: 4269 } ],
+[0]   modifiers: [ { type: 9, value: 100 } ] }
+[0] { auc: 617907978,
+[0]   item: 1121,
+[0]   owner: 'Waibsbild',
+[0]   ownerRealm: 'Blackhand',
+[0]   bid: 106807203,
+[0]   buyout: 118674671,
+[0]   quantity: 1,
+[0]   timeLeft: 'VERY_LONG',
+[0]   rand: 0,
+[0]   seed: 0,
+[0]   context: 54,
+[0]   bonusLists: [ { bonusListId: 4269 } ],
+[0]   modifiers: [ { type: 9, value: 100 } ] }
+[0] { auc: 618604128,
+[0]   item: 1121,
+[0]   owner: 'Goldtasche',
+[0]   ownerRealm: 'Blackhand',
+[0]   bid: 106762203,
+[0]   buyout: 118624671,
+[0]   quantity: 1,
+[0]   timeLeft: 'VERY_LONG',
+[0]   rand: 0,
+[0]   seed: 0,
+[0]   context: 37,
+[0]   bonusLists: [ { bonusListId: 3942 } ],
+[0]   modifiers: [ { type: 9, value: 43 } ] }
+[0] { auc: 1443384762,
+[0]   item: 1121,
+[0]   owner: 'Sickxecute',
+[0]   ownerRealm: 'Blackrock',
+[0]   bid: 64393547,
+[0]   buyout: 64393547,
+[0]   quantity: 1,
+[0]   timeLeft: 'LONG',
+[0]   rand: 0,
+[0]   seed: 0,
+[0]   context: 0 }
+[0] { auc: 1442654484,
+[0]   item: 1121,
+[0]   owner: 'Leyliss',
+[0]   ownerRealm: 'Blackrock',
+[0]   bid: 64393548,
+[0]   buyout: 64393548,
+[0]   quantity: 1,
+[0]   timeLeft: 'VERY_LONG',
+[0]   rand: 0,
+[0]   seed: 0,
+[0]   context: 0 }
+[0] { auc: 617368231,
+[0]   item: 1121,
+[0]   owner: 'Greenmhunter',
+[0]   ownerRealm: 'Antonidas',
+[0]   bid: 51300247,
+[0]   buyout: 51300247,
+[0]   quantity: 1,
+[0]   timeLeft: 'LONG',
+[0]   rand: 0,
+[0]   seed: 0,
+[0]   context: 0 }
+[0] { auc: 618587124,
+[0]   item: 1121,
+[0]   owner: 'Tsmpro',
+[0]   ownerRealm: 'Antonidas',
+[0]   bid: 34181486,
+[0]   buyout: 34181486,
+[0]   quantity: 1,
+[0]   timeLeft: 'VERY_LONG',
+[0]   rand: 0,
+[0]   seed: 0,
+[0]   context: 0 }
+[0] { auc: 617280116,
+[0]   item: 1121,
+[0]   owner: 'Odilia',
+[0]   ownerRealm: 'Antonidas',
+[0]   bid: 22788930,
+[0]   buyout: 34181487,
+[0]   quantity: 1,
+[0]   timeLeft: 'MEDIUM',
+[0]   rand: 0,
+[0]   seed: 0,
+[0]   context: 0 }
+[0] { auc: 1443716730,
+[0]   item: 1121,
+[0]   owner: 'Tehmoh',
+[0]   ownerRealm: 'Blackmoore',
+[0]   bid: 81868671,
+[0]   buyout: 90965190,
+[0]   quantity: 1,
+[0]   timeLeft: 'VERY_LONG',
+[0]   rand: 0,
+[0]   seed: 0,
+[0]   context: 54,
+[0]   bonusLists: [ { bonusListId: 4269 } ],
+[0]   modifiers: [ { type: 9, value: 110 } ] }
+[0] { auc: 1443749636,
+[0]   item: 1121,
+[0]   owner: 'Fariis',
+[0]   ownerRealm: 'Blackmoore',
+[0]   bid: 86416929,
+[0]   buyout: 90965189,
+[0]   quantity: 1,
+[0]   timeLeft: 'VERY_LONG',
+[0]   rand: 0,
+[0]   seed: 0,
+[0]   context: 0 }
+[0] error :  /wow/auction/data/Das%20Konsortium?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv
