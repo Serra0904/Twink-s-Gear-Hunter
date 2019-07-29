@@ -8,6 +8,55 @@ const scanner = require("./routes/api/scanner");
 const app = express();
 const keys = require("./config/keys");
 
+// Bodyparser middleware
+app.use(
+  bodyParser.urlencoded({
+    extended: false
+  })
+);
+app.use(bodyParser.json());
+
+// DB Config
+const db = require("./config/keys").mongoURI;
+
+// Connect to MongoDB
+mongoose
+  .connect(db, { useNewUrlParser: true })
+  .then(() => console.log("MongoDB successfully connected"))
+  .catch(err => console.log(err));
+
+// Passport middleware
+app.use(passport.initialize());
+
+// Passport config
+require("./config/passport")(passport);
+
+//Refresh access token every 12 hours
+setInterval(() => {
+  axios
+    .post(
+      "https://us.battle.net/oauth/token",
+      "grant_type=client_credentials&scope=all&client_id=87942a232baa4b41842d6191424aec43&client_secret=dXHfQu81sA9Fl8aYn2w8EV2RkaQ9sMyv"
+    )
+    .then(function(res) {
+      User.updateMany(
+        {},
+        { $set: { token: res.data.access_token } },
+        { safe: true, multi: true },
+        function(err, obj) {
+          if (!err) {
+            //console.log(obj);
+          } else {
+            //console.log(err);
+          }
+        }
+      );
+    })
+    .catch(error => {
+      console.log(error);
+    });
+}, 21600);
+
 let realm = [
   { realm: "archimonde", zone: "fr" },
   { realm: "arathi", zone: "fr" },
@@ -131,76 +180,67 @@ let realm = [
   { realm: "Zuluhed", zone: "ge" }
 ];
 
-// Bodyparser middleware
-app.use(
-  bodyParser.urlencoded({
-    extended: false
-  })
-);
-app.use(bodyParser.json());
-// DB Config
-const db = require("./config/keys").mongoURI;
-// Connect to MongoDB
-mongoose
-  .connect(db, { useNewUrlParser: true })
-  .then(() => console.log("MongoDB successfully connected"))
-  .catch(err => console.log(err));
-// Passport middleware
-app.use(passport.initialize());
-// Passport config
-require("./config/passport")(passport);
+let urls = [];
 
-//Refresh access token every 12 hours
-setInterval(() => {
-  axios
-    .post(
-      "https://us.battle.net/oauth/token",
-      "grant_type=client_credentials&scope=all&client_id=87942a232baa4b41842d6191424aec43&client_secret=dXHfQu81sA9Fl8aYn2w8EV2RkaQ9sMyv"
-    )
-    .then(function(res) {
-      User.updateMany(
-        {},
-        { $set: { token: res.data.access_token } },
-        { safe: true, multi: true },
-        function(err, obj) {
-          if (!err) {
-            //console.log(obj);
-          } else {
-            //console.log(err);
+const getUrls = async () => {
+  let ArrayUrls = realm.map(async scan => {
+    await axios
+      .get(
+        `https://eu.api.blizzard.com/wow/auction/data/${
+          scan.realm
+        }?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv`
+      )
+      .then(auctionsUrl => {
+        urls.push(auctionsUrl.data.files[0].url);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  });
+
+  await Promise.all(ArrayUrls);
+  //fetchUrls();
+  makeRequestsFromArray(urls);
+  console.log(urls);
+};
+
+let fetchUrls = async () => {
+  try {
+    let result = await axios.all(urls);
+    console.log(result.data.realms);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const makeRequestsFromArray = arr => {
+  let index = 0;
+
+  const request = () => {
+    return axios
+      .get(arr[index])
+      .then(res => {
+        index++;
+        res.data.auctions.map(item => {
+          if (item.item === 1121 && item.bonusLists === 3901) {
+            console.log(item);
           }
-        }
-      );
-    })
-    .catch(error => {
-      console.log(error);
-    });
-}, 21600);
-
-realm.map(scan => {
-  axios
-    .get(
-      `https://eu.api.blizzard.com/wow/auction/data/${
-        scan.realm
-      }?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv`
-    )
-    .then(auctionsUrl => {
-      console.log(auctionsUrl.data.files[0].url);
-      axios
-        .get(auctionsUrl.data.files[0].url)
-        .then(auctionsJson => {
-          auctionsJson.data.auctions.map(auction => {
-            if (auction.item === 1121) {
-              console.log(auction);
-            }
-          });
-        })
-        .catch(errorAxios2 => {
-          //onsole.log(errorAxios2);
-          console.log("error : ", auctionsUrl.request.path);
         });
-    })
-    .catch();
-});
+        if (index >= arr.length) {
+          console.log("done");
+          return "done";
+        }
+        return request();
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+
+  return request();
+};
+
+getUrls();
 
 // Routes
 app.use("/api/users", users);
