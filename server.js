@@ -66,6 +66,7 @@ let realm = [
   { realm: "Confrérie du Thorium", zone: "fr" },
   { realm: "Culte de la Rive noire", zone: "fr" },
   { realm: "Dalaran", zone: "fr" },
+  ,
   { realm: "Drek'Thar", zone: "fr" },
   { realm: "Eitrigg", zone: "fr" },
   { realm: "Eldre'Thalas", zone: "fr" },
@@ -229,16 +230,17 @@ const makeRequestsFromArray = arr => {
             item.item === 12987 ||
             item.item === 12977
           ) {
-            if (item.bonusLists[0].bonusListId === 3901) {
-              console.log(
-                "************************* ITEM 28 ILVL***************************"
-              );
-              console.log(item);
-              console.log(
-                "******************************************************************"
-              );
+            if (item.bonusLists !== undefined) {
+              if (item.bonusLists[0].bonusListId === 3901) {
+                console.log(
+                  "************************* ITEM 28 ILVL***************************"
+                );
+                console.log(item);
+                console.log(
+                  "******************************************************************"
+                );
+              }
             }
-            console.log(item);
           }
         });
         if (index >= arr.length) {
