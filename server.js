@@ -241,7 +241,6 @@ const makeRequestsFromArray = arr => {
                 );
               }
             }
-            console.log(item);
           }
         });
         if (index >= arr.length) {
@@ -258,7 +257,9 @@ const makeRequestsFromArray = arr => {
   return request();
 };
 
-getUrls();
+setInterval(() => {
+  getUrls();
+}, 3600000);
 
 // Routes
 app.use("/api/users", users);
