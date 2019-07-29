@@ -233,7 +233,7 @@ const makeRequestsFromArray = arr => {
             if (item.bonusLists !== undefined) {
               if (item.bonusLists[0].bonusListId === 3901) {
                 console.log(
-                  "************************* ITEM 28 ILVL***************************"
+                  "************************* ITEM 28 ILVL FOUND***************************"
                 );
                 console.log(item);
                 console.log(
