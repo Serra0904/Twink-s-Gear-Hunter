@@ -222,7 +222,22 @@ const makeRequestsFromArray = arr => {
       .then(res => {
         index++;
         res.data.auctions.map(item => {
-          if (item.item === 1121) {
+          if (
+            item.item === 1121 ||
+            item.item === 12994 ||
+            item.item === 2911 ||
+            item.item === 12987 ||
+            item.item === 12977
+          ) {
+            if (item.bonusLists[0].bonusListId === 3901) {
+              console.log(
+                "************************* ITEM 28 ILVL***************************"
+              );
+              console.log(item);
+              console.log(
+                "******************************************************************"
+              );
+            }
             console.log(item);
           }
         });
