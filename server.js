@@ -241,6 +241,7 @@ const makeRequestsFromArray = arr => {
                 );
               }
             }
+            console.log(item);
           }
         });
         if (index >= arr.length) {
