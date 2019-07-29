@@ -257,6 +257,7 @@ const makeRequestsFromArray = arr => {
   return request();
 };
 
+getUrls();
 setInterval(() => {
   getUrls();
 }, 3600000);
