@@ -8,7 +8,7 @@ const User = require("../../models/User.js");
 const Auction = require("../../models/Auctions");
 
 /**
- * *Je récupère le token de l'api wow dans la bdd (qui est refresh toutes les 6h)
+ * *Je récupère le token de l'api wow dans la bdd (qui est refresh toutes les 6h) oui
  */
 let token = "";
 User.find({ _id: "5d3c1c0b5270e926c0546526" })
