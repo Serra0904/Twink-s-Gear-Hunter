@@ -338,7 +338,7 @@ const fetchUrls = arr => {
             if (item.bonusLists !== undefined) {
               if (
                 item.bonusLists[0].bonusListId === 3901 ||
-                tem.bonusLists[0].bonusListId === 3942
+                item.bonusLists[0].bonusListId === 3942
               ) {
                 console.log(
                   "************************* ITEM 28 ILVL FOUND***************************"
