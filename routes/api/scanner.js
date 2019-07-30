@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const keys = require("../../config/keys");
 const axios = require("axios");
-const user = require("../../models/User.js");
+const User = require("../../models/User.js");
 
 // * Je charge le modèle des enchères
 const Auction = require("../../models/Auctions");
