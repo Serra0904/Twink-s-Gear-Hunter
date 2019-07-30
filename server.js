@@ -296,7 +296,6 @@ const fetchUrls = arr => {
         if (index >= arr.length) {
           // * toutes les urls on étés fetch
           console.log("done");
-
           // !Appel récursif
           return "done";
         }
@@ -320,8 +319,7 @@ setInterval(() => {
 // Routes
 app.use("/api/users", users);
 
-// Serve static assets if we are in production
-
+// *Serve static assets if we are in production
 if (process.env.NODE_ENV === "production") {
   // set static folder*
   app.use(express.static("client/build"));
