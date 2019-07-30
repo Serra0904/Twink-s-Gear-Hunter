@@ -426,7 +426,7 @@ const fetchUrls = arr => {
 
 setTimeout(() => {
   getUrls();
-}, 1000000);
+}, 10000);
 
 setInterval(() => {
   getUrls();
