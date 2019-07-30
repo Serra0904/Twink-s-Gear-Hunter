@@ -189,7 +189,7 @@ const getUrls = async () => {
       .get(
         `https://eu.api.blizzard.com/wow/auction/data/${
           scan.realm
-        }?locale=fr_FR&access_token=US44kVpNcQiol8uCgs55VsqidnzVqj1ggv`
+        }?locale=fr_FR&access_token=USDpydF7Bg9326Ssj6zxFgTIQfwnSMkbJ5`
       )
       .then(auctionsUrl => {
         urls.push(auctionsUrl.data.files[0].url);
