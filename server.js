@@ -216,6 +216,13 @@ let realm = [
 let urls = [];
 
 const getUrls = async () => {
+  /**
+   * * Get urls est une fonction asynchrone qui boucle autour du tableau des serveurs Wow, et qui va taper dans l'API pour récuperer
+   * * l'url qui contient le flux JSON de l'hotel des ventes *
+   * ! Certains serveurs plante, l'exception est normalement gérée et le script continu
+   * @param ne prend aucun paramètre
+   */
+
   let ArrayUrls = realm.map(async scan => {
     await axios
       .get(
@@ -224,6 +231,9 @@ const getUrls = async () => {
         }?locale=fr_FR&access_token=USDpydF7Bg9326Ssj6zxFgTIQfwnSMkbJ5`
       )
       .then(auctionsUrl => {
+        /**
+         * *Push toutes les urls dans le tableau urls, pour être résolue plus tard
+         */
         urls.push(auctionsUrl.data.files[0].url);
       })
       .catch(error => {
@@ -231,30 +241,36 @@ const getUrls = async () => {
       });
   });
 
+  /**
+   * *Attends que toutes les urls soient piush dans le tableau avant de résoudre,
+   * *afin d'éviter que axios ne plante (trop de requête en même temps)
+   */
   await Promise.all(ArrayUrls);
+
+  /**
+   * *Une fois toutes les urls obtenues et stockés dans le tableau urls, on lance la fonction fetchUrls
+   */
   //fetchUrls();
-  makeRequestsFromArray(urls);
+  fetchUrls(urls);
   console.log(urls);
 };
 
-let fetchUrls = async () => {
-  try {
-    let result = await axios.all(urls);
-    console.log(result.data.realms);
-  } catch (error) {
-    console.log(error);
-  }
-};
-
-const makeRequestsFromArray = arr => {
+/**
+ * @param Array arr : liste d'urls
+ * *Fonction récursive, qui va effectuer un appel asynchrone sur chaque url du tableau "arr",
+ * *Une fois que les données ont étés traités, la fonction s'appelle elle même jusqu'à ce que
+ * *toutes les urls soivent traitées
+ */
+const fetchUrls = arr => {
   let index = 0;
-
+  // * Fonction qui va être appellée de manière récursive
   const request = () => {
     return axios
       .get(arr[index])
       .then(res => {
         index++;
         res.data.auctions.map(item => {
+          // * Liste des objets à rechercher (va être dynamique)
           if (
             item.item === 1121 ||
             item.item === 12994 ||
@@ -273,12 +289,17 @@ const makeRequestsFromArray = arr => {
                 );
               }
             }
+            console.log("...");
           }
         });
         if (index >= arr.length) {
+          // * toutes les urls on étés fetch
           console.log("done");
+
+          // !Appel récursif
           return "done";
         }
+        // !Appel récursif
         return request();
       })
       .catch(error => {
@@ -290,6 +311,7 @@ const makeRequestsFromArray = arr => {
 };
 
 getUrls();
+
 setInterval(() => {
   getUrls();
 }, 3600000);
