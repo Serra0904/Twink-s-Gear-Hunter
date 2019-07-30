@@ -400,6 +400,8 @@ const fetchUrls = arr => {
       })
       .catch(error => {
         console.log(error);
+        // !Appel récursif
+        return request();
       });
   };
 
@@ -417,15 +419,16 @@ setInterval(() => {
 // @route GET api/scanner/scann
 // @desc Register user
 // @access Public
-router.get("/scann", (req, res) => {
-  axios
-    .get(
-      `https://eu.api.blizzard.com/wow/auction/data/archimonde?locale=fr_FR&access_token=`
-    )
-    .then(auctionsUrl => {
-      console.log(auctionsUrl);
+router.get("/get/all", (req, res) => {
+  Auction.find({})
+    .then(response => {
+      res.send(200).json(reponse.data);
     })
-    .catch(error => console.log(error));
+    .catch(error => {
+      console.log(error);
+    })
+    .sort({ _id: 1 })
+    .limit(1);
 });
 
 module.exports = router;
