@@ -420,14 +420,11 @@ setInterval(() => {
 // @desc Register user
 // @access Public
 router.get("/get/all", (req, res) => {
-  Auction.find({})
-    .then(response => {
-      res.send(200).json(reponse.data);
-    })
-    .catch(error => {
-      console.log(error);
-    })
-    .sort({ _id: 1 })
+  Auction.find({}, (err, auctions) => {
+    if (err) return res.json("error").status(401);
+    else return res.json(auctions).status(200);
+  })
+    .sort({ $natural: -1 })
     .limit(1);
 });
 
