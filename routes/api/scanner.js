@@ -362,10 +362,7 @@ const fetchUrls = arr => {
             item.item === 12977
           ) {
             if (item.bonusLists !== undefined) {
-              if (
-                item.bonusLists[0].bonusListId === 3901 ||
-                item.bonusLists[0].bonusListId === 3942
-              ) {
+              if (item.bonusLists[0].bonusListId === 3901) {
                 auctions.push(item);
                 console.log(
                   "************************* ITEM 28 ILVL FOUND***************************"
