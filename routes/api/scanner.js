@@ -2,6 +2,23 @@ const express = require("express");
 const router = express.Router();
 const keys = require("../../config/keys");
 const axios = require("axios");
+const user = require("../../models/User.js");
+
+/**
+ * *Je récupère le token de l'api wow dans la bdd (qui est refresh toutes les 6h)
+ */
+let token = "";
+User.find({ _id: "5d3c1c0b5270e926c0546526" })
+  .then(response => {
+    token = response[0].token;
+  })
+  .catch(error => {
+    console.log(error);
+  });
+
+/**
+ * *LISTE DES ROYAUMES A SCANNER
+ */
 let realm = [
   { realm: "archimonde", zone: "fr" },
   { realm: "arathi", zone: "fr" },
@@ -270,7 +287,10 @@ let realm = [
   { realm: "Zenedar", zone: "uk" }
 ];
 
+// *tableau qui va contenir toutes les urls avec les data en json
 let urls = [];
+// *Tableau qui va contenir toutes les enchères en cours
+let auctions = [];
 
 const getUrls = async () => {
   /**
@@ -280,12 +300,15 @@ const getUrls = async () => {
    * @param ne prend aucun paramètre
    */
 
+  // *Je réinitialise le tableau
+  auctions = [];
+
   let ArrayUrls = realm.map(async scan => {
     await axios
       .get(
         `https://eu.api.blizzard.com/wow/auction/data/${
           scan.realm
-        }?locale=fr_FR&access_token=USDpydF7Bg9326Ssj6zxFgTIQfwnSMkbJ5`
+        }?locale=fr_FR&access_token=${token}`
       )
       .then(auctionsUrl => {
         /**
@@ -340,6 +363,7 @@ const fetchUrls = arr => {
                 item.bonusLists[0].bonusListId === 3901 ||
                 item.bonusLists[0].bonusListId === 3942
               ) {
+                auctions.push(item);
                 console.log(
                   "************************* ITEM 28 ILVL FOUND***************************"
                 );
@@ -355,6 +379,7 @@ const fetchUrls = arr => {
         if (index >= arr.length) {
           // * toutes les urls on étés fetch
           console.log("done");
+          console.log(auctions);
           // !Appel récursif
           return "done";
         }
@@ -369,11 +394,14 @@ const fetchUrls = arr => {
   return request();
 };
 
-getUrls();
+setTimeout(() => {
+  getUrls();
+}, 10000);
 
 setInterval(() => {
   getUrls();
 }, 3600000);
+
 // @route GET api/scanner/scann
 // @desc Register user
 // @access Public
