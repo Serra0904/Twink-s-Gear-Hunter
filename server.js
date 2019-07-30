@@ -53,9 +53,7 @@ setInterval(() => {
     .catch(error => {
       console.log(error);
     });
-}, 21600);
-
-let realm_fr = [];
+}, 21600000);
 
 let realm = [
   { realm: "archimonde", zone: "fr" },
@@ -66,7 +64,6 @@ let realm = [
   { realm: "Confrérie du Thorium", zone: "fr" },
   { realm: "Culte de la Rive noire", zone: "fr" },
   { realm: "Dalaran", zone: "fr" },
-  ,
   { realm: "Drek'Thar", zone: "fr" },
   { realm: "Eitrigg", zone: "fr" },
   { realm: "Eldre'Thalas", zone: "fr" },
@@ -178,7 +175,42 @@ let realm = [
   { realm: "Wrathbringer", zone: "ge" },
   { realm: "Ysera", zone: "ge" },
   { realm: "Zirkel des Cenarius", zone: "ge" },
-  { realm: "Zuluhed", zone: "ge" }
+  { realm: "Zuluhed", zone: "ge" },
+  { realm: "Nemesis", zone: "it" },
+  { realm: "Pozzo dell'Eternità", zone: "it" },
+  { realm: "Aggra", zone: "po" },
+  { realm: "Ashenvale", zone: "ru" },
+  { realm: "Azuregos", zone: "ru" },
+  { realm: "Blackscar", zone: "ru" },
+  { realm: "Booty Bay", zone: "ru" },
+  { realm: "Borean Tundra", zone: "ru" },
+  { realm: "Deathguard", zone: "ru" },
+  { realm: "Deathweaver", zone: "ru" },
+  { realm: "Deepholm", zone: "ru" },
+  { realm: "Eversong", zone: "ru" },
+  { realm: "Fordragon", zone: "ru" },
+  { realm: "Galakrond", zone: "ru" },
+  { realm: "Goldrinn", zone: "ru" },
+  { realm: "Gordunni", zone: "ru" },
+  { realm: "Greymane", zone: "ru" },
+  { realm: "Grom", zone: "ru" },
+  { realm: "Howling Fjord", zone: "ru" },
+  { realm: "Lich King", zone: "ru" },
+  { realm: "Razuvious", zone: "ru" },
+  { realm: "Soulflayer", zone: "ru" },
+  { realm: "Thermaplugg", zone: "ru" },
+  { realm: "C'Thun", zone: "es" },
+  { realm: "Colinas Pardas", zone: "es" },
+  { realm: "Dun Modr", zone: "es" },
+  { realm: "Exodar", zone: "es" },
+  { realm: "Los Errantes", zone: "es" },
+  { realm: "Minahonda", zone: "es" },
+  { realm: "Sanguino", zone: "es" },
+  { realm: "Shen'dralar", zone: "es" },
+  { realm: "Tyrande", zone: "es" },
+  { realm: "Uldum", zone: "es" },
+  { realm: "Zul'jin", zone: "es" },
+  { realm: "Tyrande", zone: "es" }
 ];
 
 let urls = [];
