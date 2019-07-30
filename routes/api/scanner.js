@@ -4,6 +4,9 @@ const keys = require("../../config/keys");
 const axios = require("axios");
 const user = require("../../models/User.js");
 
+// * Je charge le modèle des enchères
+const Auction = require("../../models/Auctions");
+
 /**
  * *Je récupère le token de l'api wow dans la bdd (qui est refresh toutes les 6h)
  */
@@ -380,6 +383,18 @@ const fetchUrls = arr => {
           // * toutes les urls on étés fetch
           console.log("done");
           console.log(auctions);
+          const newAuction = new Auction({
+            auctions: auctions
+          });
+          newAuction
+            .save()
+            .then(response => {
+              console.log(response);
+            })
+            .catch(error => {
+              console.log(error);
+            });
+
           // !Appel récursif
           return "done";
         }
