@@ -290,7 +290,7 @@ const fetchUrls = arr => {
                 );
               }
             }
-            console.log("...");
+            console.log(item);
           }
         });
         if (index >= arr.length) {
