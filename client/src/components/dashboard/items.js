@@ -23,6 +23,7 @@ class items extends Component {
 
   render() {
     let currentAuction = this.state.auctions[0].auctions.map(auction => {
+      let prix = auction.buyout / 10000;
       console.log(auction);
       return (
         <div class="col s12 m4">
@@ -37,6 +38,7 @@ class items extends Component {
             <div class="card-content">
               <p>Serveur : {auction.ownerRealm}</p>
               <p>Vendeur : {auction.owner}</p>
+              <p>Prix : {prix} POs</p>
               <p>Temps restant : {auction.timeLeft}</p>
               <p>Ilvl : 28</p>
             </div>
@@ -59,7 +61,12 @@ class items extends Component {
             </h4>
           </div>
         </div>
-        <div class="row">{currentAuction}</div>
+
+        <div class="row">
+          {currentAuction.length === 0
+            ? "Aucun item disponible..."
+            : currentAuction}
+        </div>
       </div>
     );
   }
