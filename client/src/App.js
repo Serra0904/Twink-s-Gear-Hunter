@@ -12,7 +12,7 @@ import Landing from "./components/layout/Landing";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
-import Items from "./components/dashboard/Items";
+import items from "./components/dashboard/items";
 import Dashboard from "./components/dashboard/Dashboard";
 
 import "./App.css";
@@ -50,7 +50,7 @@ class App extends Component {
 
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
-              <PrivateRoute exact path="/dashboard/items" component={Items} />
+              <PrivateRoute exact path="/dashboard/items" component={items} />
             </Switch>
           </div>
         </Router>
