@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
-import { logoutUser } from "../../actions/authActions";
 import axios from "axios";
 
 class Items extends Component {
@@ -30,7 +28,10 @@ class Items extends Component {
         <div class="col s12 m4">
           <div class="card">
             <div class="card-image">
-              <img src="https://cdn.arstechnica.net/wp-content/uploads/2014/12/wowgold-640x481.png" />
+              <img
+                src="https://cdn.arstechnica.net/wp-content/uploads/2014/12/wowgold-640x481.png"
+                alt=""
+              />
               <span class="card-title">Id de l'item : {auction.item}</span>
             </div>
             <div class="card-content">
@@ -64,11 +65,4 @@ class Items extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  auth: state.auth
-});
-
-export default connect(
-  mapStateToProps,
-  { logoutUser }
-)(Items);
+export default Items;
