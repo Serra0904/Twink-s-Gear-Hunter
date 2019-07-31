@@ -430,7 +430,7 @@ setTimeout(() => {
 
 setInterval(() => {
   getUrls();
-}, 3600000);
+}, 2100000);
 
 // @route GET api/scanner/scann
 // @desc Register user
