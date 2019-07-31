@@ -55,7 +55,7 @@ setInterval(() => {
     .catch(error => {
       console.log(error);
     });
-}, 21600000);
+}, 216000);
 
 // Routes
 app.use("/api/users", users);
