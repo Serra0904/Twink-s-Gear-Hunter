@@ -13,6 +13,7 @@ class items extends Component {
         .get("../api/scanner/get/all")
         .then(response => {
           this.setState({ auctions: response.data });
+          console.log(response.data);
         })
         .catch(error => {
           console.log(error);
@@ -50,7 +51,6 @@ class items extends Component {
         </div>
       );
     });
-
     return (
       <div style={{ minHeight: "75vh" }} className="container">
         <div className="row" style={{ width: "100%" }}>
@@ -63,9 +63,13 @@ class items extends Component {
             <h6>
               <p>
                 Dernière mise à jour :{" "}
-                <Moment format=":mm:ss a" interval={0}>
-                  {this.state.auctions[0].data}
-                </Moment>
+                {this.state.auctions[0].date ? (
+                  <Moment interval={0} format="HH:mm">
+                    {this.state.auctions[0].date}
+                  </Moment>
+                ) : (
+                  ""
+                )}
               </p>
             </h6>
           </div>
