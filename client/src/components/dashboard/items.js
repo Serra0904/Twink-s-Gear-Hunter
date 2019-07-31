@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import moment from "moment";
+import Moment from "react-moment";
 
 class items extends Component {
   state = {
@@ -63,7 +63,9 @@ class items extends Component {
             <h6>
               <p>
                 Dernière mise à jour :{" "}
-                {moment(this.state.auctions[0].data).format("h:mm:ss a")}
+                <Moment format=":mm:ss a" interval={0}>
+                  {this.state.auctions[0].data}
+                </Moment>
               </p>
             </h6>
           </div>
