@@ -349,77 +349,81 @@ const fetchUrls = arr => {
   let index = 0;
   // * Fonction qui va être appellée de manière récursive
   const request = () => {
-    return axios
-      .get(arr[index])
-      .then(res => {
-        index++;
-        res.data.auctions.map(item => {
-          // * Liste des objets à rechercher (va être dynamique)
-          if (
-            item.item === 1121 ||
-            item.item === 12994 ||
-            item.item === 2911 ||
-            item.item === 12987 ||
-            item.item === 12977
-          ) {
-            if (item.bonusLists !== undefined) {
-              if (item.bonusLists[0].bonusListId === 3901) {
-                auctions.push(item);
-                console.log(
-                  "************************* ITEM 28 ILVL FOUND***************************"
-                );
-                console.log(item);
-                console.log(
-                  "******************************************************************"
-                );
+    try {
+      return axios
+        .get(arr[index])
+        .then(res => {
+          index++;
+          res.data.auctions.map(item => {
+            // * Liste des objets à rechercher (va être dynamique)
+            if (
+              item.item === 1121 ||
+              item.item === 12994 ||
+              item.item === 2911 ||
+              item.item === 12987 ||
+              item.item === 12977
+            ) {
+              if (item.bonusLists !== undefined) {
+                if (item.bonusLists[0].bonusListId === 3901) {
+                  auctions.push(item);
+                  console.log(
+                    "************************* ITEM 28 ILVL FOUND***************************"
+                  );
+                  console.log(item);
+                  console.log(
+                    "******************************************************************"
+                  );
+                }
               }
+              console.log("wrong ilevel..");
             }
-            console.log("wrong ilevel..");
-          }
-        });
-        if (index >= arr.length) {
-          // * toutes les urls on étés fetch
-          console.log("done");
-          console.log(auctions);
-          const newAuction = new Auction({
-            auctions: auctions,
-            region: "EU"
           });
-          newAuction
-            .save()
-            .then(response => {
-              console.log(response);
-              if (auctions.length > 0) {
-                sendmail(
-                  {
-                    from: "serranicolas0904@gmail.com",
-                    to: "twinkunivers@gmail.com",
-                    subject: "NOTIFICATION NOUVEL ITEM RARE",
-                    html:
-                      "<h1>UN NOUVEL ITEM RARE A ÉTÉ TROUVÉ PAR GEAR HUNTER</h1> <a href='https://gearhunter.herokuapp.com/dashboard/items'>Voir tout</a> "
-                  },
-                  function(err, reply) {
-                    console.dir(reply);
-                    if (!err) console.log("ok");
-                    else console.log("error");
-                  }
-                );
-              }
-            })
-            .catch(error => {
-              console.log(error);
+          if (index >= arr.length) {
+            // * toutes les urls on étés fetch
+            console.log("done");
+            console.log(auctions);
+            const newAuction = new Auction({
+              auctions: auctions,
+              region: "EU"
             });
+            newAuction
+              .save()
+              .then(response => {
+                console.log(response);
+                if (auctions.length > 0) {
+                  sendmail(
+                    {
+                      from: "serranicolas0904@gmail.com",
+                      to: "twinkunivers@gmail.com",
+                      subject: "NOTIFICATION NOUVEL ITEM RARE",
+                      html:
+                        "<h1>UN NOUVEL ITEM RARE A ÉTÉ TROUVÉ PAR GEAR HUNTER</h1> <a href='https://gearhunter.herokuapp.com/dashboard/items'>Voir tout</a> "
+                    },
+                    function(err, reply) {
+                      console.dir(reply);
+                      if (!err) console.log("ok");
+                      else console.log("error");
+                    }
+                  );
+                }
+              })
+              .catch(error => {
+                console.log(error);
+              });
 
-          return "done";
-        }
-        // !Appel récursif
-        return request();
-      })
-      .catch(error => {
-        console.log(error);
-        // !Appel récursif
-        return request();
-      });
+            return "done";
+          }
+          // !Appel récursif
+          return request();
+        })
+        .catch(error => {
+          console.log(error);
+          // !Appel récursif
+          return request();
+        });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return request();
