@@ -382,7 +382,8 @@ const fetchUrls = arr => {
           console.log("done");
           console.log(auctions);
           const newAuction = new Auction({
-            auctions: auctions
+            auctions: auctions,
+            region: "EU"
           });
           newAuction
             .save()

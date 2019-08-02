@@ -10,6 +10,10 @@ const AuctionSchema = new Schema({
   date: {
     type: Date,
     default: Date.now
+  },
+  region: {
+    type: String,
+    required: true
   }
 });
 
