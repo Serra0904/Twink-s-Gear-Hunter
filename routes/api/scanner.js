@@ -364,16 +364,6 @@ const fetchUrls = arr => {
               item.item === 12977 ||
               item.item === 4446
             ) {
-              if (item.item === 4446) {
-                auctions.push(item);
-                console.log(
-                  "************************* BLACK VENOM FOUNDE **************************"
-                );
-                console.log(item);
-                console.log(
-                  "******************************************************************"
-                );
-              }
               if (item.bonusLists !== undefined) {
                 if (item.bonusLists[0].bonusListId === 3901) {
                   auctions.push(item);
