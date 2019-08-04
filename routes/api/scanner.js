@@ -435,7 +435,7 @@ setTimeout(() => {
 }, 10000);
 
 setInterval(() => {
-  getUrls();
+  fetchUrls(urls);
 }, 3100000);
 
 // @route GET api/scanner/scann
