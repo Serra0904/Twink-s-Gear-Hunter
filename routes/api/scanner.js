@@ -304,8 +304,10 @@ const getUrls = async () => {
    * @param ne prend aucun paramètre
    */
 
-  // *Je réinitialise le tableau
+  // *Je réinitialise le tableau des enchères
   auctions = [];
+  // *Je réinitialise le tableau des urls
+  urls = [];
 
   let ArrayUrls = realm.map(async scan => {
     await axios
@@ -435,7 +437,7 @@ setTimeout(() => {
 }, 10000);
 
 setInterval(() => {
-  fetchUrls(urls);
+  getUrls();
 }, 3100000);
 
 // @route GET api/scanner/scann
