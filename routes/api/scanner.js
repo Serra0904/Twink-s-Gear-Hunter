@@ -436,12 +436,17 @@ setTimeout(() => {
 
 setInterval(() => {
   getUrls();
-}, 3100000);
+}, 2400000);
+
+setInterval(() => {
+  console.log("10 minutes");
+}, 60000);
 
 // @route GET api/scanner/scann
 // @desc Register user
 // @access Public
-router.get("/get/all", (req, res) => {
+router.post("/get/all", (req, res) => {
+  console.log(req.body);
   Auction.find({}, (err, auctions) => {
     if (err) return res.json("error").status(401);
     else return res.json(auctions).status(200);

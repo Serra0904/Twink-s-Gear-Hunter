@@ -2,15 +2,18 @@ import React, { Component } from "react";
 import axios from "axios";
 import Moment from "react-moment";
 
+import { connect } from "react-redux";
 class items extends Component {
   state = {
     auctions: [{ auctions: [] }]
   };
 
   componentDidMount() {
+    console.log(this.props.auth);
+    const userId = this.props.auth.user.id;
     try {
       axios
-        .get("../api/scanner/get/all")
+        .post("../api/scanner/get/all", { userId: userId })
         .then(response => {
           this.setState({ auctions: response.data });
           console.log(response.data);
@@ -28,23 +31,23 @@ class items extends Component {
       let prix = auction.buyout / 10000;
       console.log(auction);
       return (
-        <div class="col s12 m4">
-          <div class="card">
-            <div class="card-image">
+        <div className="col s12 m4">
+          <div className="card">
+            <div className="card-image">
               <img
                 src="https://cdn.arstechnica.net/wp-content/uploads/2014/12/wowgold-640x481.png"
                 alt=""
               />
-              <span class="card-title">Id de l'item : {auction.item}</span>
+              <span className="card-title">Id de l'item : {auction.item}</span>
             </div>
-            <div class="card-content">
+            <div className="card-content">
               <p>Serveur : {auction.ownerRealm}</p>
               <p>Vendeur : {auction.owner}</p>
               <p>Prix : {prix} POs</p>
               <p>Temps restant : {auction.timeLeft}</p>
               <p>Ilvl : 28</p>
             </div>
-            <div class="card-action">
+            <div className="card-action">
               <a href="#">Disponible..</a>
             </div>
           </div>
@@ -75,7 +78,7 @@ class items extends Component {
           </div>
         </div>
 
-        <div class="row">
+        <div className="row">
           {currentAuction.length === 0
             ? "Aucun item disponible..."
             : currentAuction}
@@ -84,5 +87,12 @@ class items extends Component {
     );
   }
 }
+const mapStateToProps = state => ({
+  auth: state.auth,
+  errors: state.errors
+});
 
-export default items;
+export default connect(
+  mapStateToProps,
+  null
+)(items);
