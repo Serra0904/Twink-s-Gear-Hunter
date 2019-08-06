@@ -438,9 +438,17 @@ setInterval(() => {
   getUrls();
 }, 2400000);
 
+let compteur = 0;
 setInterval(() => {
+  if (compteur === 40) {
+    console.log(compteur);
+    compteur = 0;
+  } else {
+    compteur = compteur + 10;
+    console.log(compteur, " minutes");
+  }
   console.log("10 minutes");
-}, 60000);
+}, 600000);
 
 // @route GET api/scanner/scann
 // @desc Register user
