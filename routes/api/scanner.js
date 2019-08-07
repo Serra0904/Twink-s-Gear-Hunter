@@ -354,6 +354,7 @@ const fetchUrls = arr => {
         .get(arr[index])
         .then(res => {
           index++;
+          console.log(res.data);
           res.data.auctions.map(item => {
             // * Liste des objets à rechercher (va être dynamique)
             if (
@@ -367,6 +368,20 @@ const fetchUrls = arr => {
               if (item.bonusLists !== undefined) {
                 if (item.bonusLists[0].bonusListId === 3901) {
                   auctions.push(item);
+                  sendmail(
+                    {
+                      from: "serranicolas0904@gmail.com",
+                      to: "twinkunivers@gmail.com",
+                      subject: "NOTIFICATION NOUVEL ITEM RARE",
+                      html:
+                        "<h1>UN NOUVEL ITEM RARE A ÉTÉ TROUVÉ PAR GEAR HUNTER</h1> <a href='https://gearhunter.herokuapp.com/dashboard/items'>Voir tout</a> "
+                    },
+                    function(err, reply) {
+                      console.dir(reply);
+                      if (!err) console.log("ok");
+                      else console.log("error");
+                    }
+                  );
                   console.log(
                     "************************* ITEM 28 ILVL FOUND***************************"
                   );
