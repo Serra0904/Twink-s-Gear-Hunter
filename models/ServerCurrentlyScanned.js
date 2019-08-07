@@ -11,6 +11,10 @@ const ServerCurrentlyScanned = new Schema({
     type: Array,
     required: true
   },
+  items: {
+    type: Array,
+    required: true
+  },
   date: {
     type: Date,
     default: Date.now

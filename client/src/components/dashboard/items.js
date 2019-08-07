@@ -76,7 +76,7 @@ class items extends Component {
     });
 
     let scannCurrentlyScanned = this.state.currentServers.map(server => {
-      return <span>{server.name} ,</span>;
+      return <span className="currentServer">{server.name}, </span>;
     });
     return (
       <div style={{ minHeight: "75vh" }} className="container">
