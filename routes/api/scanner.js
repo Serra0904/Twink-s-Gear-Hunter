@@ -17,7 +17,7 @@ var auctions = [];
 // * Tableau qui va contenir les id des items recherchés par l'utilisateur
 let idItems = [1121, 12994, 2911, 12987, 12977, 4446];
 // * Tableau qui va contenir les id des ilvl recherchés par l'utilisateur
-let ilevels = [3901, 4268, 3904, 3942, 3941, 4269, 4270, 3902, 3903, 3904];
+let ilevels = [3901];
 
 /**
  * @params Prend en paramètre l'id de l'item recherché, id, et l'ilvl, ilvl
@@ -76,9 +76,8 @@ let realm = [
   { realm: "archimonde", zone: "fr" },
   { realm: "arathi", zone: "fr" },
   { realm: "Arak-arahm", zone: "fr" },
-  { realm: "Chants éternels", zone: "fr" }
-];
-/*{ realm: "Cho'gall", zone: "fr" },
+  { realm: "Chants éternels", zone: "fr" },
+  { realm: "Cho'gall", zone: "fr" },
   { realm: "Confrérie du Thorium", zone: "fr" },
   { realm: "Culte de la Rive noire", zone: "fr" },
   { realm: "Dalaran", zone: "fr" },
@@ -336,7 +335,8 @@ let realm = [
   { realm: "Vek'nilash", zone: "uk" },
   { realm: "Wildhammer", zone: "uk" },
   { realm: "Xavius", zone: "uk" },
-  { realm: "Zenedar", zone: "uk" }*/
+  { realm: "Zenedar", zone: "uk" }
+];
 
 /**
  * * Get urls est une fonction asynchrone qui boucle autour du tableau des serveurs Wow, et qui va taper dans l'API pour récuperer
