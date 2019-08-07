@@ -27,9 +27,6 @@ let ilevels = [3901];
  */
 
 const findItem = (id, ilvl, item) => {
-  console.log(id);
-  console.log(item);
-  console.log(ilvl);
   if (id === item.item) {
     if (item.item.bonusLists !== undefined) {
       if (ilvl.includes(item.bonusLists[0].bonusLists)) {
@@ -56,6 +53,7 @@ const findItem = (id, ilvl, item) => {
         );
       }
     }
+    console.log("wrong ilevel..");
   }
 };
 
