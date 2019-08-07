@@ -101,7 +101,7 @@ class items extends Component {
             </h6>
             <h6>
               les serveurs {scannCurrentlyScanned} sont en train d'être
-              scanné...
+              scannés...
             </h6>
           </div>
         </div>
