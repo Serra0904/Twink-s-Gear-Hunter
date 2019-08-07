@@ -422,43 +422,6 @@ const fetchUrls = arr => {
             idItems.map(id => {
               findItem(id, ilevels, item);
             });
-
-            /*  if (
-              item.item === 1121 ||
-              item.item === 12994 ||
-              item.item === 2911 ||
-              item.item === 12987 ||
-              item.item === 12977 ||
-              item.item === 4446
-            ) {
-              if (item.bonusLists !== undefined) {
-                if (item.bonusLists[0].bonusListId === 3901) {
-                  auctions.push(item);
-                  sendmail(
-                    {
-                      from: "serranicolas0904@gmail.com",
-                      to: "twinkunivers@gmail.com",
-                      subject: "NOTIFICATION NOUVEL ITEM RARE",
-                      html: `<h1>UN NOUVEL ITEM RARE A ÉTÉ TROUVÉ PAR GEAR HUNTER</h1> <a href='https://gearhunter.herokuapp.com/dashboard/items'>Voir tout</a> <br> <h1>&{item}</h1> `
-                    },
-                    function(err, reply) {
-                      console.dir(reply);
-                      if (!err) console.log("ok");
-                      else console.log("error");
-                    }
-                  );
-                  console.log(
-                    "************************* ITEM 28 ILVL FOUND ***************************"
-                  );
-                  console.log(item);
-                  console.log(
-                    "******************************************************************"
-                  );
-                }
-              }
-              console.log("wrong ilevel..");
-            }
-            */
           });
 
           if (index >= arr.length) {
@@ -495,7 +458,8 @@ const fetchUrls = arr => {
                 console.log(error);
               });
 
-            return "done";
+            console.log("done");
+            getUrls();
           }
           // !Appel récursif
           return request();
@@ -516,22 +480,6 @@ const fetchUrls = arr => {
 setTimeout(() => {
   getUrls();
 }, 10000);
-
-setInterval(() => {
-  getUrls();
-}, 2400000);
-
-let compteur = 0;
-setInterval(() => {
-  if (compteur === 40) {
-    console.log(compteur);
-    compteur = 0;
-  } else {
-    compteur = compteur + 10;
-    console.log(compteur, " minutes");
-  }
-  console.log("10 minutes");
-}, 600000);
 
 // @route GET api/scanner/scann
 // @desc Register user
