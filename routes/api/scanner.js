@@ -426,7 +426,9 @@ const fetchUrls = arr => {
 
           if (index >= arr.length) {
             // * toutes les urls on étés fetch
-            console.log("done");
+            console.log(
+              "************************** DONE *****************************"
+            );
             console.log(auctions);
             const newAuction = new Auction({
               auctions: auctions,
@@ -458,7 +460,6 @@ const fetchUrls = arr => {
                 console.log(error);
               });
 
-            console.log("done");
             getUrls();
           }
           // !Appel récursif
