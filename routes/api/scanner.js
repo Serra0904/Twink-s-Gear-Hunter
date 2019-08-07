@@ -9,6 +9,53 @@ const Auction = require("../../models/Auctions");
 const User = require("../../models/User.js");
 const ServerCurrentlyScanned = require("../../models/ServerCurrentlyScanned.js");
 
+// *tableau qui va contenir toutes les urls avec les data en json
+let urls = [];
+// *Tableau qui va contenir toutes les enchères en cours
+let auctions = [];
+
+// * Tableau qui va contenir les id des items recherchés par l'utilisateur
+let idItems = [1121, 12994, 2911, 12987, 12977, 4446];
+
+// * Tableau qui va contenir les id des ilvl recherchés par l'utilisateur
+let ilevels = [3901];
+
+/**
+ * @params Prend en paramètre l'id de l'item recherché, id, et l'ilvl, ilvl
+ * *La fonction doit permettre de gérer dynamiquement les tests ilvl
+ * ! FONCTION EN TEST, NE PAS PUSH EN PRODUCTION !
+ */
+
+const findItem = (id, ilvl, item) => {
+  if (id === item.item) {
+    if (item.item.bonusLists !== undefined) {
+      if (ilvl.includes(item.bonusLists[0].bonusLists)) {
+        auctions.push(item);
+        sendmail(
+          {
+            from: "serranicolas0904@gmail.com",
+            to: "twinkunivers@gmail.com",
+            subject: "NOTIFICATION NOUVEL ITEM RARE",
+            html: `<h1>UN NOUVEL ITEM RARE A ÉTÉ TROUVÉ PAR GEAR HUNTER</h1> <a href='https://gearhunter.herokuapp.com/dashboard/items'>Voir tout</a> <br> <h1>&{item}</h1> `
+          },
+          function(err, reply) {
+            console.dir(reply);
+            if (!err) console.log("ok");
+            else console.log("error");
+          }
+        );
+        console.log(
+          "************************* ITEM 28 ILVL FOUND ***************************"
+        );
+        console.log(item);
+        console.log(
+          "******************************************************************"
+        );
+      }
+    }
+  }
+};
+
 /**
  * *Je récupère le token de l'api wow dans la bdd (qui est refresh toutes les 6h) oui
  */
@@ -290,11 +337,6 @@ let realm = [
   { realm: "Zenedar", zone: "uk" }
 ];
 
-// *tableau qui va contenir toutes les urls avec les data en json
-let urls = [];
-// *Tableau qui va contenir toutes les enchères en cours
-let auctions = [];
-
 const getUrls = async () => {
   /**
    * * Get urls est une fonction asynchrone qui boucle autour du tableau des serveurs Wow, et qui va taper dans l'API pour récuperer
@@ -375,7 +417,12 @@ const fetchUrls = arr => {
 
           res.data.auctions.map(item => {
             // * Liste des objets à rechercher (va être dynamique)
-            if (
+
+            idItems.map(id => {
+              findItem(id, ilevels, item);
+            });
+
+            /*  if (
               item.item === 1121 ||
               item.item === 12994 ||
               item.item === 2911 ||
@@ -410,7 +457,9 @@ const fetchUrls = arr => {
               }
               console.log("wrong ilevel..");
             }
+            */
           });
+
           if (index >= arr.length) {
             // * toutes les urls on étés fetch
             console.log("done");
