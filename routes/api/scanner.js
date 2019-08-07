@@ -11,8 +11,11 @@ const ServerCurrentlyScanned = require("../../models/ServerCurrentlyScanned.js")
 
 // *tableau qui va contenir toutes les urls avec les data en json
 let urls = [];
+
+/*
 // *Tableau qui va contenir toutes les enchères en cours
 let auctions = [];
+*/
 
 // * Tableau qui va contenir les id des items recherchés par l'utilisateur
 let idItems = [1121, 12994, 2911, 12987, 12977, 4446];
