@@ -78,8 +78,8 @@ let realm = [
   { realm: "archimonde", zone: "fr" },
   { realm: "arathi", zone: "fr" },
   { realm: "Arak-arahm", zone: "fr" },
-  { realm: "Chants éternels", zone: "fr" },
-  { realm: "Cho'gall", zone: "fr" },
+  { realm: "Chants éternels", zone: "fr" }
+  /*{ realm: "Cho'gall", zone: "fr" },
   { realm: "Confrérie du Thorium", zone: "fr" },
   { realm: "Culte de la Rive noire", zone: "fr" },
   { realm: "Dalaran", zone: "fr" },
@@ -337,7 +337,7 @@ let realm = [
   { realm: "Vek'nilash", zone: "uk" },
   { realm: "Wildhammer", zone: "uk" },
   { realm: "Xavius", zone: "uk" },
-  { realm: "Zenedar", zone: "uk" }
+  { realm: "Zenedar", zone: "uk" }*/
 ];
 
 const getUrls = async () => {
