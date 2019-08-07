@@ -31,8 +31,11 @@ class items extends Component {
         axios
           .post("../api/scanner/get/lastServerScanned")
           .then(response => {
-            this.setState({ ...this.state, currentServers: response.data });
-            console.log(response.data);
+            this.setState({
+              ...this.state,
+              currentServers: response.data[0].servers
+            });
+            console.log(response.data[0].servers);
           })
           .catch(error => {
             console.log(error);
@@ -40,7 +43,7 @@ class items extends Component {
       } catch (error) {
         console.log(error);
       }
-    }, 10000);
+    }, 7000);
   }
 
   render() {
@@ -71,6 +74,10 @@ class items extends Component {
         </div>
       );
     });
+
+    let scannCurrentlyScanned = this.state.currentServers.map(server => {
+      return <span>{server.name}</span>;
+    });
     return (
       <div style={{ minHeight: "75vh" }} className="container">
         <div className="row" style={{ width: "100%" }}>
@@ -82,7 +89,7 @@ class items extends Component {
             </h4>
             <h6>
               <p>
-                Dernière mise à jour :{" "}
+                Le dernier scann s'est terminé à :{" "}
                 {this.state.auctions[0].date ? (
                   <Moment interval={0} format="HH:mm">
                     {this.state.auctions[0].date}
@@ -92,6 +99,7 @@ class items extends Component {
                 )}
               </p>
             </h6>
+            <h6>les serveurs</h6>
           </div>
         </div>
 
