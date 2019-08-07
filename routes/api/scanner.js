@@ -18,7 +18,7 @@ let auctions = [];
 let idItems = [1121, 12994, 2911, 12987, 12977, 4446];
 
 // * Tableau qui va contenir les id des ilvl recherchés par l'utilisateur
-let ilevels = [3901, 4268, 3904];
+let ilevels = [3901, 4268, 3904, 3942, 3941, 4269, 4270, 3902, 3903, 3904];
 
 /**
  * @params Prend en paramètre l'id de l'item recherché, id, et l'ilvl, ilvl
@@ -27,6 +27,7 @@ let ilevels = [3901, 4268, 3904];
  */
 
 const findItem = (id, ilvl, item) => {
+  console.log(item);
   if (id === item.item) {
     if (item.item.bonusLists !== undefined) {
       if (ilvl.includes(item.bonusLists[0].bonusLists)) {
