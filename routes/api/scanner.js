@@ -486,11 +486,11 @@ const fetchUrls = arr => {
                     function(err, reply) {
                       console.dir(reply);
                       // *Je réinitialise le tableau des enchères
-                      auctions = [];
                       if (!err) console.log("ok");
                       else console.log("error");
                     }
                   );
+                  auctions = [];
                 }
               })
               .catch(error => {
