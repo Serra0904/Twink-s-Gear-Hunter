@@ -18,7 +18,7 @@ let auctions = [];
 let idItems = [1121, 12994, 2911, 12987, 12977, 4446];
 
 // * Tableau qui va contenir les id des ilvl recherchés par l'utilisateur
-let ilevels = [3901];
+let ilevels = [3901, 4268, 3904];
 
 /**
  * @params Prend en paramètre l'id de l'item recherché, id, et l'ilvl, ilvl
