@@ -6,7 +6,7 @@ const Schema = mongoose.Schema;
  */
 
 // Create Schema
-const ServerCurrentluScanned = new Schema({
+const ServerCurrentlyScanned = new Schema({
   servers: {
     type: Array,
     required: true
@@ -18,6 +18,6 @@ const ServerCurrentluScanned = new Schema({
 });
 
 module.exports = User = mongoose.model(
-  "serverCurrentluScanned",
-  ServerCurrentluScanned
+  "serverCurrentlyScanned",
+  ServerCurrentlyScanned
 );

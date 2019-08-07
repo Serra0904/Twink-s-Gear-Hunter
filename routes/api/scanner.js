@@ -497,7 +497,7 @@ router.post("/get/all", (req, res) => {
 
 // * ROUTE QUI ME PERMET DE RECUP LE DERNIER SERVEUR SCANN DEPUIS LE FRONT
 router.post("/get/lastServerScanned", (req, res) => {
-  ListeningStateChangedEvent.find({}, (err, servers) => {
+  ServerCurrentlyScanned.find({}, (err, servers) => {
     if (err) return res.json("error").status(401);
     else return res.json(servers).status(200);
   })
