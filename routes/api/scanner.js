@@ -29,9 +29,7 @@ let ilevels = [3901, 4268, 3904, 3942, 3941, 4269, 4270, 3902, 3903, 3904];
 const findItem = (id, ilvl, item) => {
   if (id === item.item) {
     if (item.bonusLists !== undefined) {
-      console.log(item.bonusLists);
       if (ilvl.includes(item.bonusLists[0].bonusListId)) {
-        auctions.push(item);
         sendmail(
           {
             from: "serranicolas0904@gmail.com",
@@ -52,9 +50,9 @@ const findItem = (id, ilvl, item) => {
         console.log(
           "******************************************************************"
         );
-      } else {
-        console.log("wrong ilevel..");
       }
+    } else {
+      console.log("wrong ilevel..");
     }
   }
 };
