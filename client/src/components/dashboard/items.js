@@ -76,7 +76,7 @@ class items extends Component {
     });
 
     let scannCurrentlyScanned = this.state.currentServers.map(server => {
-      return <span>{server.name}</span>;
+      return <span>{server.name} ,</span>;
     });
     return (
       <div style={{ minHeight: "75vh" }} className="container">
@@ -99,7 +99,10 @@ class items extends Component {
                 )}
               </p>
             </h6>
-            <h6>les serveurs</h6>
+            <h6>
+              les serveurs {scannCurrentlyScanned} sont en train d'être
+              scanné...
+            </h6>
           </div>
         </div>
 
