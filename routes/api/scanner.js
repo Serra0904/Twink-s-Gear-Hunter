@@ -27,8 +27,8 @@ let ilevels = [3901, 4268, 3904, 3942, 3941, 4269, 4270, 3902, 3903, 3904];
  */
 
 const findItem = (id, ilvl, item) => {
-  console.log(item);
   if (id === item.item) {
+    console.log(item);
     if (item.item.bonusLists !== undefined) {
       if (ilvl.includes(item.bonusLists[0].bonusLists)) {
         auctions.push(item);
@@ -52,9 +52,10 @@ const findItem = (id, ilvl, item) => {
         console.log(
           "******************************************************************"
         );
+      } else {
+        console.log("wrong ilevel..");
       }
     }
-    console.log("wrong ilevel..");
   }
 };
 
