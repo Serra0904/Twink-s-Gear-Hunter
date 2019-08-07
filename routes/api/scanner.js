@@ -27,6 +27,9 @@ let ilevels = [3901];
  */
 
 const findItem = (id, ilvl, item) => {
+  console.log(id);
+  console.log(item);
+  console.log(ilvl);
   if (id === item.item) {
     if (item.item.bonusLists !== undefined) {
       if (ilvl.includes(item.bonusLists[0].bonusLists)) {
@@ -406,10 +409,10 @@ const fetchUrls = arr => {
           currentServer
             .save()
             .then(res => {
-              console.log("res: ", res);
+              //console.log("res: ", res);
             })
             .catch(error => {
-              console.log("error: ", error);
+              //console.log("error: ", error);
             });
           /**
            *  ! Ici, j'ai enregistré les serveurs qui vont être scanné, et je commence le scann !
