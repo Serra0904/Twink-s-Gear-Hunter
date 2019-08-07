@@ -459,6 +459,7 @@ const fetchUrls = arr => {
               .catch(error => {
                 console.log(error);
               });
+            return "done";
           }
           // !Appel récursif
           return request();
