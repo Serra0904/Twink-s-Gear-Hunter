@@ -32,7 +32,7 @@ const findItem = (id, ilvl, item) => {
     if (item.bonusLists !== undefined) {
       console.log("1");
       console.log(ilvl);
-      console.log(item.bonusLists[0].bonusLists);
+      console.log(item.bonusLists);
       if (ilvl.includes(item.bonusLists[0].bonusLists)) {
         auctions.push(item);
         sendmail(
