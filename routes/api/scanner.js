@@ -11,15 +11,11 @@ const ServerCurrentlyScanned = require("../../models/ServerCurrentlyScanned.js")
 
 // *tableau qui va contenir toutes les urls avec les data en json
 let urls = [];
-
-/*
 // *Tableau qui va contenir toutes les enchères en cours
 let auctions = [];
-*/
 
 // * Tableau qui va contenir les id des items recherchés par l'utilisateur
 let idItems = [1121, 12994, 2911, 12987, 12977, 4446];
-
 // * Tableau qui va contenir les id des ilvl recherchés par l'utilisateur
 let ilevels = [3901, 4268, 3904, 3942, 3941, 4269, 4270, 3902, 3903, 3904];
 
@@ -341,14 +337,14 @@ let realm = [
   { realm: "Xavius", zone: "uk" },
   { realm: "Zenedar", zone: "uk" }*/
 
-const getUrls = async () => {
-  /**
-   * * Get urls est une fonction asynchrone qui boucle autour du tableau des serveurs Wow, et qui va taper dans l'API pour récuperer
-   * * l'url qui contient le flux JSON de l'hotel des ventes *
-   * ! Certains serveurs plante, l'exception est normalement gérée et le script continu
-   * @param ne prend aucun paramètre
-   */
+/**
+ * * Get urls est une fonction asynchrone qui boucle autour du tableau des serveurs Wow, et qui va taper dans l'API pour récuperer
+ * * l'url qui contient le flux JSON de l'hotel des ventes *
+ * ! Certains serveurs plante, l'exception est normalement gérée et le script continu
+ * @param ne prend aucun paramètre
+ */
 
+const getUrls = async () => {
   // *Je réinitialise le tableau des urls
   urls = [];
 
