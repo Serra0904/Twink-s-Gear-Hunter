@@ -354,7 +354,8 @@ const fetchUrls = arr => {
         .get(arr[index])
         .then(res => {
           index++;
-          console.log(res.data);
+          console.log(res.data.realms);
+          res.sendStatus(200).json(res.data.realms);
           res.data.auctions.map(item => {
             // * Liste des objets à rechercher (va être dynamique)
             if (
