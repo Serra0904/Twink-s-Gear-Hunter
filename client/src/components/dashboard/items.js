@@ -5,7 +5,8 @@ import Moment from "react-moment";
 import { connect } from "react-redux";
 class items extends Component {
   state = {
-    auctions: [{ auctions: [] }]
+    auctions: [{ auctions: [] }],
+    currentServers: []
   };
 
   componentDidMount() {
@@ -15,7 +16,7 @@ class items extends Component {
       axios
         .post("../api/scanner/get/all", { userId: userId })
         .then(response => {
-          this.setState({ auctions: response.data });
+          this.setState({ ...this.state, auctions: response.data });
           console.log(response.data);
         })
         .catch(error => {
@@ -24,6 +25,22 @@ class items extends Component {
     } catch (error) {
       console.log(error);
     }
+
+    setInterval(() => {
+      try {
+        axios
+          .post("../api/scanner/get/lastServerScanned")
+          .then(response => {
+            this.setState({ ...this.state, currentServers: response.data });
+            console.log(response.data);
+          })
+          .catch(error => {
+            console.log(error);
+          });
+      } catch (error) {
+        console.log(error);
+      }
+    }, 10000);
   }
 
   render() {

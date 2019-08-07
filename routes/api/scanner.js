@@ -7,6 +7,7 @@ const sendmail = require("sendmail")({ silent: true });
 // * Je charge le modèle des enchères
 const Auction = require("../../models/Auctions");
 const User = require("../../models/User.js");
+const ServerCurrentlyScanned = require("../../models/ServerCurrentlyScanned.js");
 
 /**
  * *Je récupère le token de l'api wow dans la bdd (qui est refresh toutes les 6h) oui
@@ -354,7 +355,24 @@ const fetchUrls = arr => {
         .get(arr[index])
         .then(res => {
           index++;
-          res.status(200).json(res.data.realms);
+
+          /**
+           *  J'enregistre en base la liste des serveurs qui sont en train d'être scanné..
+           */
+          let currentServer = new ServerCurrentlyScanned({
+            servers: res.data.realms
+          });
+          currentServer
+            .save()
+            .then(res => {
+              console.log("res: ", res);
+            })
+            .catch(error => {
+              console.log("error: ", error);
+            });
+          /**
+           *  ! Ici, j'ai enregistré les serveurs qui vont être scanné, et je commence le scann !
+           */
           res.data.auctions.map(item => {
             // * Liste des objets à rechercher (va être dynamique)
             if (
@@ -373,8 +391,7 @@ const fetchUrls = arr => {
                       from: "serranicolas0904@gmail.com",
                       to: "twinkunivers@gmail.com",
                       subject: "NOTIFICATION NOUVEL ITEM RARE",
-                      html:
-                        "<h1>UN NOUVEL ITEM RARE A ÉTÉ TROUVÉ PAR GEAR HUNTER</h1> <a href='https://gearhunter.herokuapp.com/dashboard/items'>Voir tout</a> "
+                      html: `<h1>UN NOUVEL ITEM RARE A ÉTÉ TROUVÉ PAR GEAR HUNTER</h1> <a href='https://gearhunter.herokuapp.com/dashboard/items'>Voir tout</a> <br> <h1>&{item}</h1> `
                     },
                     function(err, reply) {
                       console.dir(reply);
@@ -383,7 +400,7 @@ const fetchUrls = arr => {
                     }
                   );
                   console.log(
-                    "************************* ITEM 28 ILVL FOUND***************************"
+                    "************************* ITEM 28 ILVL FOUND ***************************"
                   );
                   console.log(item);
                   console.log(
@@ -473,6 +490,16 @@ router.post("/get/all", (req, res) => {
   Auction.find({}, (err, auctions) => {
     if (err) return res.json("error").status(401);
     else return res.json(auctions).status(200);
+  })
+    .sort({ $natural: -1 })
+    .limit(1);
+});
+
+// * ROUTE QUI ME PERMET DE RECUP LE DERNIER SERVEUR SCANN DEPUIS LE FRONT
+router.post("/get/lastServerScanned", (req, res) => {
+  ListeningStateChangedEvent.find({}, (err, servers) => {
+    if (err) return res.json("error").status(401);
+    else return res.json(servers).status(200);
   })
     .sort({ $natural: -1 })
     .limit(1);
