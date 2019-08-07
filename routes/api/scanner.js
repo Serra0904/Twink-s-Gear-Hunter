@@ -355,6 +355,24 @@ const fetchUrls = arr => {
         .get(arr[index])
         .then(res => {
           index++;
+          /**
+           *  J'enregistre en base la liste des serveurs qui sont en train d'être scanné..
+           */
+          let currentServer = new ServerCurrentlyScanned({
+            servers: res.data.realms
+          });
+          currentServer
+            .save()
+            .then(res => {
+              console.log("res: ", res);
+            })
+            .catch(error => {
+              console.log("error: ", error);
+            });
+          /**
+           *  ! Ici, j'ai enregistré les serveurs qui vont être scanné, et je commence le scann !
+           */
+
           res.data.auctions.map(item => {
             // * Liste des objets à rechercher (va être dynamique)
             if (
@@ -367,25 +385,6 @@ const fetchUrls = arr => {
             ) {
               if (item.bonusLists !== undefined) {
                 if (item.bonusLists[0].bonusListId === 3901) {
-                  /**
-                   *  J'enregistre en base la liste des serveurs qui sont en train d'être scanné..
-                   */
-                  let currentServer = new ServerCurrentlyScanned({
-                    servers: res.data.realms,
-                    items: item
-                  });
-                  currentServer
-                    .save()
-                    .then(res => {
-                      console.log("res: ", res);
-                    })
-                    .catch(error => {
-                      console.log("error: ", error);
-                    });
-                  /**
-                   *  ! Ici, j'ai enregistré les serveurs qui vont être scanné, et je commence le scann !
-                   */
-
                   auctions.push(item);
                   sendmail(
                     {
