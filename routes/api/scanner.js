@@ -12,7 +12,7 @@ const ServerCurrentlyScanned = require("../../models/ServerCurrentlyScanned.js")
 // *tableau qui va contenir toutes les urls avec les data en json
 let urls = [];
 // *Tableau qui va contenir toutes les enchères en cours
-let auctions = [];
+var auctions = [];
 
 // * Tableau qui va contenir les id des items recherchés par l'utilisateur
 let idItems = [1121, 12994, 2911, 12987, 12977, 4446];
@@ -29,6 +29,7 @@ const findItem = (id, ilvl, item) => {
   if (id === item.item) {
     if (item.bonusLists !== undefined) {
       if (ilvl.includes(item.bonusLists[0].bonusListId)) {
+        auctions.push(item);
         sendmail(
           {
             from: "serranicolas0904@gmail.com",
@@ -347,6 +348,8 @@ let realm = [
 const getUrls = async () => {
   // *Je réinitialise le tableau des urls
   urls = [];
+  // *Je réinitialise le tableau des enchères
+  auctions = [];
 
   let ArrayUrls = realm.map(async scan => {
     await axios
@@ -486,7 +489,6 @@ const fetchUrls = arr => {
                       else console.log("error");
                     }
                   );
-                  auctions = [];
                 }
               })
               .catch(error => {
