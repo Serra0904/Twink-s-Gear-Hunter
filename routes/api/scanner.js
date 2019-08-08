@@ -481,6 +481,10 @@ setTimeout(() => {
   getUrls();
 }, 10000);
 
+setInterval(() => {
+  getUrls();
+}, 3000000);
+
 // @route GET api/scanner/scann
 // @desc Register user
 // @access Public
