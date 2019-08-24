@@ -33,10 +33,8 @@ let idItems = [
  */
 
 const findItem = (id, ilvl, item) => {
-  console.log(id);
-  console.log(item.item);
-
   if (id === item.item) {
+    console.log(id);
     if (item.bonusLists !== undefined) {
       if (ilvl.includes(item.bonusLists[0].bonusListId)) {
         auctions.push(item);
