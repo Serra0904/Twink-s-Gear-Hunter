@@ -14,14 +14,14 @@ let urls = [];
 // *Tableau qui va contenir toutes les enchères en cours
 var auctions = [];
 
-// * Tableau qui va contenir les id des items recherchés par l'utilisateur
+// * Tableau qui va contenir les id des items recherchés par l'utilisateu
 let idItems = [
-  [1121, 3901],
-  [12994, 3901],
-  [2911, 3901],
-  [12987, 3901],
-  [12977, 3901],
-  [4446, 3901]
+  [1121, [3901]],
+  [12994, [3901]],
+  [2911, [3901]],
+  [12987, [3901]],
+  [12977, [3901]],
+  [4446, [3901]]
 ];
 // * Tableau qui va contenir les id des ilvl recherchés par l'utilisateur
 //let ilevels = [3901];
@@ -33,6 +33,9 @@ let idItems = [
  */
 
 const findItem = (id, ilvl, item) => {
+  console.log(id);
+  console.log(id.item);
+
   if (id === item.item) {
     if (item.bonusLists !== undefined) {
       if (ilvl.includes(item.bonusLists[0].bonusListId)) {
@@ -81,8 +84,8 @@ User.find({ _id: "5d3c1c0b5270e926c0546526" })
  */
 let realm = [
   { realm: "archimonde", zone: "fr" },
-  { realm: "arathi", zone: "fr" },
-  { realm: "Arak-arahm", zone: "fr" },
+  { realm: "arathi", zone: "fr" }
+  /* { realm: "Arak-arahm", zone: "fr" },
   { realm: "Chants éternels", zone: "fr" },
   { realm: "Cho'gall", zone: "fr" },
   { realm: "Confrérie du Thorium", zone: "fr" },
@@ -342,7 +345,7 @@ let realm = [
   { realm: "Vek'nilash", zone: "uk" },
   { realm: "Wildhammer", zone: "uk" },
   { realm: "Xavius", zone: "uk" },
-  { realm: "Zenedar", zone: "uk" }
+  { realm: "Zenedar", zone: "uk" }*/
 ];
 
 /**
@@ -427,7 +430,10 @@ const fetchUrls = arr => {
             // * Liste des objets à rechercher (va être dynamique)
 
             idItems.map(itemSearched => {
-              findItem(itemSearched[0], itemSearched[1], auctionItem);
+              idItem = itemSearched[0];
+              ilvlItem = itemSearched[1];
+              console.log(auctionItem);
+              findItem(idItem, ilvlItem, auctionItem);
             });
           });
 
