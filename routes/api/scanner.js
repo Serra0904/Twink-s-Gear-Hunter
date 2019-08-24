@@ -15,14 +15,21 @@ let urls = [];
 var auctions = [];
 
 // * Tableau qui va contenir les id des items recherchés par l'utilisateur
-let idItems = [1121, 12994, 2911, 12987, 12977, 4446];
+let idItems = [
+  [1121, 3901],
+  [12994, 3901],
+  [2911, 3901],
+  [12987, 3901],
+  [12977, 3901],
+  [4446, 3901]
+];
 // * Tableau qui va contenir les id des ilvl recherchés par l'utilisateur
-let ilevels = [3901];
+//let ilevels = [3901];
 
 /**
  * @params Prend en paramètre l'id de l'item recherché, id, et l'ilvl, ilvl
  * *La fonction doit permettre de gérer dynamiquement les tests ilvl
- * ! FONCTION EN TEST, NE PAS PUSH EN PRODUCTION !
+ *
  */
 
 const findItem = (id, ilvl, item) => {
@@ -416,11 +423,11 @@ const fetchUrls = arr => {
            *  ! Ici, j'ai enregistré les serveurs qui vont être scanné, et je commence le scann !
            */
 
-          res.data.auctions.map(item => {
+          res.data.auctions.map(auctionItem => {
             // * Liste des objets à rechercher (va être dynamique)
 
-            idItems.map(id => {
-              findItem(id, ilevels, item);
+            idItems.map(itemSearched => {
+              findItem(itemSearched[0], itemSearched[1], auctionItem);
             });
           });
 
