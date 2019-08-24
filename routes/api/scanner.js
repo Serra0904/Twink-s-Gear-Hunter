@@ -34,7 +34,7 @@ let idItems = [
 
 const findItem = (id, ilvl, item) => {
   console.log(id);
-  console.log(id.item);
+  console.log(item.item);
 
   if (id === item.item) {
     if (item.bonusLists !== undefined) {
@@ -43,7 +43,7 @@ const findItem = (id, ilvl, item) => {
         sendmail(
           {
             from: "serranicolas0904@gmail.com",
-            to: "twinkunivers@gmail.com",
+            to: "serranicolas0904@gmail.com",
             subject: "NOTIFICATION NOUVEL ITEM RARE",
             html: `<h1>UN NOUVEL ITEM RARE A ÉTÉ TROUVÉ PAR GEAR HUNTER</h1> <a href='https://gearhunter.herokuapp.com/dashboard/items'>Voir tout</a> <br> <h1>&{item}</h1> `
           },
@@ -84,8 +84,8 @@ User.find({ _id: "5d3c1c0b5270e926c0546526" })
  */
 let realm = [
   { realm: "archimonde", zone: "fr" },
-  { realm: "arathi", zone: "fr" }
-  /* { realm: "Arak-arahm", zone: "fr" },
+  { realm: "arathi", zone: "fr" },
+  { realm: "Arak-arahm", zone: "fr" },
   { realm: "Chants éternels", zone: "fr" },
   { realm: "Cho'gall", zone: "fr" },
   { realm: "Confrérie du Thorium", zone: "fr" },
@@ -345,7 +345,7 @@ let realm = [
   { realm: "Vek'nilash", zone: "uk" },
   { realm: "Wildhammer", zone: "uk" },
   { realm: "Xavius", zone: "uk" },
-  { realm: "Zenedar", zone: "uk" }*/
+  { realm: "Zenedar", zone: "uk" }
 ];
 
 /**
@@ -432,7 +432,6 @@ const fetchUrls = arr => {
             idItems.map(itemSearched => {
               idItem = itemSearched[0];
               ilvlItem = itemSearched[1];
-              console.log(auctionItem);
               findItem(idItem, ilvlItem, auctionItem);
             });
           });
@@ -455,7 +454,7 @@ const fetchUrls = arr => {
                   sendmail(
                     {
                       from: "serranicolas0904@gmail.com",
-                      to: "twinkunivers@gmail.com",
+                      to: "serranicolas0904@gmail.com",
                       subject: "NOTIFICATION NOUVEL ITEM RARE",
                       html:
                         "<h1>UN NOUVEL ITEM RARE A ÉTÉ TROUVÉ PAR GEAR HUNTER</h1> <a href='https://gearhunter.herokuapp.com/dashboard/items'>Voir tout</a> "
