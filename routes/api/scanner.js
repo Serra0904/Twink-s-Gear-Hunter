@@ -383,7 +383,7 @@ const getUrls = async () => {
    * *Une fois toutes les urls obtenues et stockés dans le tableau urls, on lance la fonction fetchUrls
    */
   //fetchUrls();
-  //fetchUrls(urls);
+  fetchUrls(urls);
   console.log(urls);
 };
 
