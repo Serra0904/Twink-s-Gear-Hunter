@@ -23,59 +23,6 @@ let idItems = [
   [12977, [3901]],
   [4446, [3901]]
 ];
-// * Tableau qui va contenir les id des ilvl recherchés par l'utilisateur
-//let ilevels = [3901];
-
-/**
- * @params Prend en paramètre l'id de l'item recherché, id, et l'ilvl, ilvl
- * *La fonction doit permettre de gérer dynamiquement les tests ilvl
- *
- */
-
-const findItem = (id, ilvl, item) => {
-  if (id === item.item) {
-    console.log(id);
-    if (item.bonusLists !== undefined) {
-      if (ilvl.includes(item.bonusLists[0].bonusListId)) {
-        auctions.push(item);
-        sendmail(
-          {
-            from: "serranicolas0904@gmail.com",
-            to: "serranicolas0904@gmail.com",
-            subject: "NOTIFICATION NOUVEL ITEM RARE",
-            html: `<h1>UN NOUVEL ITEM RARE A ÉTÉ TROUVÉ PAR GEAR HUNTER</h1> <a href='https://gearhunter.herokuapp.com/dashboard/items'>Voir tout</a> <br> <h1>&{item}</h1> `
-          },
-          function(err, reply) {
-            console.dir(reply);
-            if (!err) console.log("ok");
-            else console.log("error");
-          }
-        );
-        console.log(
-          "************************* ITEM 28 ILVL FOUND ***************************"
-        );
-        console.log(item);
-        console.log(
-          "******************************************************************"
-        );
-      }
-    } else {
-      console.log("wrong ilevel..");
-    }
-  }
-};
-
-/**
- * *Je récupère le token de l'api wow dans la bdd (qui est refresh toutes les 6h) oui
- */
-let token = "";
-User.find({ _id: "5d3c1c0b5270e926c0546526" })
-  .then(response => {
-    token = response[0].token;
-  })
-  .catch(error => {
-    console.log(error);
-  });
 
 /**
  * *LISTE DES ROYAUMES A SCANNER
@@ -347,6 +294,55 @@ let realm = [
 ];
 
 /**
+ * *Je récupère le token de l'api wow dans la bdd (qui est refresh toutes les 6h) oui
+ */
+let token = "";
+User.find({ _id: "5d3c1c0b5270e926c0546526" })
+  .then(response => {
+    token = response[0].token;
+  })
+  .catch(error => {
+    console.log(error);
+  });
+
+/**
+ * @params Prend en paramètre l'id de l'item recherché, id, et l'ilvl, ilvl
+ * *La fonction doit permettre de gérer dynamiquement les tests ilvl
+ *
+ */
+const findItem = (id, ilvl, item) => {
+  if (id === item.item) {
+    if (item.bonusLists !== undefined) {
+      if (ilvl.includes(item.bonusLists[0].bonusListId)) {
+        auctions.push(item);
+        sendmail(
+          {
+            from: "twinkunivers@gmail.com",
+            to: "twinkunivers@gmail.com",
+            subject: "NOTIFICATION NOUVEL ITEM RARE",
+            html: `<h1>UN NOUVEL ITEM RARE A ÉTÉ TROUVÉ PAR GEAR HUNTER</h1> <a href='https://gearhunter.herokuapp.com/dashboard/items'>Voir tout</a> <br> <h1>&{item}</h1> `
+          },
+          function(err, reply) {
+            console.dir(reply);
+            if (!err) console.log("ok");
+            else console.log("error");
+          }
+        );
+        console.log(
+          "************************* ITEM 28 ILVL FOUND ***************************"
+        );
+        console.log(item);
+        console.log(
+          "******************************************************************"
+        );
+      }
+    } else {
+      console.log("wrong ilevel..");
+    }
+  }
+};
+
+/**
  * * Get urls est une fonction asynchrone qui boucle autour du tableau des serveurs Wow, et qui va taper dans l'API pour récuperer
  * * l'url qui contient le flux JSON de l'hotel des ventes *
  * ! Certains serveurs plante, l'exception est normalement gérée et le script continu
@@ -359,12 +355,12 @@ const getUrls = async () => {
   // *Je réinitialise le tableau des enchères
   auctions = [];
 
+  console.log(token);
+
   let ArrayUrls = realm.map(async scan => {
     await axios
       .get(
-        `https://eu.api.blizzard.com/wow/auction/data/${
-          scan.realm
-        }?locale=fr_FR&access_token=${token}`
+        `https://eu.api.blizzard.com/wow/auction/data/${scan.realm}?locale=fr_FR&access_token=USyBYK4MUS5QkJJjTCI5ea4y7mk3JfPjXJ`
       )
       .then(auctionsUrl => {
         /**
@@ -387,7 +383,7 @@ const getUrls = async () => {
    * *Une fois toutes les urls obtenues et stockés dans le tableau urls, on lance la fonction fetchUrls
    */
   //fetchUrls();
-  fetchUrls(urls);
+  //fetchUrls(urls);
   console.log(urls);
 };
 
@@ -398,6 +394,7 @@ const getUrls = async () => {
  * *toutes les urls soivent traitées
  */
 const fetchUrls = arr => {
+  console.log("DEBUT DU SCAN");
   let index = 0;
   // * Fonction qui va être appellée de manière récursive
   const request = () => {
@@ -451,8 +448,8 @@ const fetchUrls = arr => {
                 if (auctions.length > 0) {
                   sendmail(
                     {
-                      from: "serranicolas0904@gmail.com",
-                      to: "serranicolas0904@gmail.com",
+                      from: "twinkunivers@gmail.com",
+                      to: "twinkunivers@gmail.com",
                       subject: "NOTIFICATION NOUVEL ITEM RARE",
                       html:
                         "<h1>UN NOUVEL ITEM RARE A ÉTÉ TROUVÉ PAR GEAR HUNTER</h1> <a href='https://gearhunter.herokuapp.com/dashboard/items'>Voir tout</a> "
@@ -496,7 +493,7 @@ setInterval(() => {
 }, 3000000);
 
 // @route GET api/scanner/scann
-// @desc Register user
+// @desc Récupère la dernière enchère
 // @access Public
 router.post("/get/all", (req, res) => {
   console.log(req.body);
@@ -508,7 +505,9 @@ router.post("/get/all", (req, res) => {
     .limit(1);
 });
 
-// * ROUTE QUI ME PERMET DE RECUP LE DERNIER SERVEUR SCANN DEPUIS LE FRONT
+// @route GET api/scanner/lastServerScanned
+// @desc ROUTE QUI ME PERMET DE RECUP LE DERNIER SERVEUR SCANN DEPUIS LE FRONT
+// @access Public
 router.post("/get/lastServerScanned", (req, res) => {
   ServerCurrentlyScanned.find({}, (err, servers) => {
     if (err) return res.json("error").status(401);
