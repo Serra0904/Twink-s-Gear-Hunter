@@ -360,7 +360,7 @@ const getUrls = async () => {
   let ArrayUrls = realm.map(async scan => {
     await axios
       .get(
-        `https://eu.api.blizzard.com/wow/auction/data/${scan.realm}?locale=fr_FR&access_token=jd85aC8LuW13dmMYtOisfgHDaHxaEuDf`
+        `https://eu.api.blizzard.com/wow/auction/data/${scan.realm}?locale=fr_FR&access_token=29LxYtcM3o9S1u1Nduy8JT73eOeboDr2`
       )
       .then(auctionsUrl => {
         /**
