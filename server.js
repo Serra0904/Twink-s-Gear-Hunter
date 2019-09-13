@@ -36,9 +36,10 @@ setInterval(() => {
   axios
     .post(
       "https://us.battle.net/oauth/token",
-      "grant_type=client_credentials&scope=all&client_id=87942a232baa4b41842d6191424aec43&client_secret=dXHfQu81sA9Fl8aYn2w8EV2RkaQ9sMyv"
+      "grant_type=client_credentials&scope=all&client_id=87942a232baa4b41842d6191424aec43&client_secret=29LxYtcM3o9S1u1Nduy8JT73eOeboDr2"
     )
     .then(function(res) {
+      console.log(res.data.access_token);
       User.updateMany(
         {},
         { $set: { token: res.data.access_token } },
