@@ -69,7 +69,7 @@ app.use("/api/users", users);
 app.use("/api/scanner", scanner);
 
 const from = "GearHunter";
-const to = "33784006727";
+const to = "33638503252";
 const text = "Démarrage des serveurs de GearHunter...";
 nexmo.message.sendSms(from, to, text);
 // *Serve static assets if we are in production

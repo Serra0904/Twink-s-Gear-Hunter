@@ -4,7 +4,7 @@ const keys = require("../../config/keys");
 const axios = require("axios");
 const sendmail = require("sendmail")({ silent: true });
 const Nexmo = require("nexmo");
-
+n;
 const nexmo = new Nexmo({
   apiKey: "68216ee7",
   apiSecret: "rUiSBsUTKxRDJ49t"
@@ -335,11 +335,6 @@ const findItem = (id, ilvl, item) => {
           }
         );
 
-        const from = "GearHunter";
-        const to = "33784006727";
-        const text = "ITEM 28ILVL TROUVE !!!!!";
-        nexmo.message.sendSms(from, to, text);
-
         console.log(
           "************************* ITEM 28 ILVL FOUND ***************************"
         );
@@ -458,6 +453,11 @@ const fetchUrls = arr => {
               .then(response => {
                 console.log(response);
                 if (auctions.length > 0) {
+                  const from = "GearHunter";
+                  const to = "33784006727";
+                  const text =
+                    "<h1>UN NOUVEL ITEM RARE A ÉTÉ TROUVÉ PAR GEAR HUNTER</h1> <a href='https://gearhunter.herokuapp.com/dashboard/items'>Voir tout</a>";
+                  nexmo.message.sendSms(from, to, text);
                   sendmail(
                     {
                       from: "twinkunivers@gmail.com",
