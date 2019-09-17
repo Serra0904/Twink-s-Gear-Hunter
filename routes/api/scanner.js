@@ -3,12 +3,12 @@ const router = express.Router();
 const keys = require("../../config/keys");
 const axios = require("axios");
 const sendmail = require("sendmail")({ silent: true });
+const Nexmo = require("nexmo");
 
-// Twilio Credentials
-const accountSid = "AC6ceb2d7542c032eaa279d41eb9e03568";
-const authToken = "bd8f7a4470bb1ebc47cf4e80ed75cbcc";
-// require the Twilio module and create a REST client
-const client = require("twilio")(accountSid, authToken);
+const nexmo = new Nexmo({
+  apiKey: "68216ee7",
+  apiSecret: "rUiSBsUTKxRDJ49t"
+});
 
 // * Je charge le modèle des enchères
 const Auction = require("../../models/Auctions");
@@ -299,15 +299,6 @@ let realm = [
   { realm: "Zenedar", zone: "uk" }
 ];
 
-client.messages
-  .create({
-    to: "+33638503252",
-    from: "GearHunter",
-    body: "Un nouvel item à été trouvé sur le bot ! ",
-    mediaUrl: "https://gearhunter.herokuapp.com/dashboard/items"
-  })
-  .then(message => console.log(message.sid));
-
 /**
  * *Je récupère le token de l'api wow dans la bdd (qui est refresh toutes les 6h) oui
  */
@@ -343,14 +334,12 @@ const findItem = (id, ilvl, item) => {
             else console.log("error");
           }
         );
-        client.messages
-          .create({
-            to: "+33638503252",
-            from: "+33638503252",
-            body: "Un nouvel item à été trouvé sur le bot ! ",
-            mediaUrl: "https://gearhunter.herokuapp.com/dashboard/items"
-          })
-          .then(message => console.log(message.sid));
+
+        const from = "GearHunter";
+        const to = "33784006727";
+        const text = "ITEM 28ILVL TROUVE !!!!!";
+        nexmo.message.sendSms(from, to, text);
+
         console.log(
           "************************* ITEM 28 ILVL FOUND ***************************"
         );

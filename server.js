@@ -8,6 +8,12 @@ const scanner = require("./routes/api/scanner");
 const app = express();
 const keys = require("./config/keys");
 const path = require("path");
+const Nexmo = require("nexmo");
+
+const nexmo = new Nexmo({
+  apiKey: "68216ee7",
+  apiSecret: "rUiSBsUTKxRDJ49t"
+});
 
 app.use(
   bodyParser.urlencoded({
@@ -62,6 +68,10 @@ setInterval(() => {
 app.use("/api/users", users);
 app.use("/api/scanner", scanner);
 
+const from = "GearHunter";
+const to = "33784006727";
+const text = "Démarrage des serveurs de GearHunter...";
+nexmo.message.sendSms(from, to, text);
 // *Serve static assets if we are in production
 if (process.env.NODE_ENV === "production") {
   // set static folder*
