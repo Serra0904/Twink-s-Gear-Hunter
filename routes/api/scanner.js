@@ -4,7 +4,7 @@ const keys = require("../../config/keys");
 const axios = require("axios");
 const sendmail = require("sendmail")({ silent: true });
 const Nexmo = require("nexmo");
-n;
+
 const nexmo = new Nexmo({
   apiKey: "68216ee7",
   apiSecret: "rUiSBsUTKxRDJ49t"
