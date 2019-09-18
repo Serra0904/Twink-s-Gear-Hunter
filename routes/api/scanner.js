@@ -317,10 +317,23 @@ User.find({ _id: "5d3c1c0b5270e926c0546526" })
  *
  */
 const findItem = (id, ilvl, item) => {
+  //*Vérification si l'id de l'enchère correspond à l'id recehrché
   if (id === item.item) {
+    //* si l'item de l'enchère n'a pas de bonus ILVL, je skip
     if (item.bonusLists !== undefined) {
+      //* Je vérifie si l'ilvl de l'item est dans la tableau des ilvl recherchés
       if (ilvl.includes(item.bonusLists[0].bonusListId)) {
+        //* Je push l'item dans le tableau des enchères
         auctions.push(item);
+
+        //*Envoie du SMS de notification
+        const from = "GearHunter";
+        const to = "33784006727";
+        const text =
+          "<h1>UN NOUVEL ITEM RARE A ÉTÉ TROUVÉ PAR GEAR HUNTER</h1> <a href='https://gearhunter.herokuapp.com/dashboard/items'>Voir tout</a>";
+        nexmo.message.sendSms(from, to, text);
+
+        //* Envoie du mail de notification
         sendmail(
           {
             from: "twinkunivers@gmail.com",
@@ -453,11 +466,6 @@ const fetchUrls = arr => {
               .then(response => {
                 console.log(response);
                 if (auctions.length > 0) {
-                  const from = "GearHunter";
-                  const to = "33784006727";
-                  const text =
-                    "<h1>UN NOUVEL ITEM RARE A ÉTÉ TROUVÉ PAR GEAR HUNTER</h1> <a href='https://gearhunter.herokuapp.com/dashboard/items'>Voir tout</a>";
-                  nexmo.message.sendSms(from, to, text);
                   sendmail(
                     {
                       from: "twinkunivers@gmail.com",
