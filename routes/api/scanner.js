@@ -51,7 +51,7 @@ let realm = [
   { realm: "Illidan", zone: "fr" },
   { realm: "Kael'thas", zone: "fr" },
   { realm: "Khaz Modan", zone: "fr" },
-  { realm: "Kirin Tor", zone: "fr" }
+  { realm: "Kirin Tor", zone: "fr" },
   { realm: "Krasus", zone: "fr" },
   { realm: "La Croisade écarlate", zone: "fr" },
   { realm: "Les Clairvoyants", zone: "fr" },
