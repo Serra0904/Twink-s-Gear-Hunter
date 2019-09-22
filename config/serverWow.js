@@ -1,3 +1,6 @@
+/**
+ * *LISTE DES ROYAUMES A SCANNER
+ */
 let realm = [
   { realm: "archimonde", zone: "fr" },
   { realm: "arathi", zone: "fr" },
@@ -121,7 +124,6 @@ let realm = [
   { realm: "Zuluhed", zone: "ge" },
   { realm: "Nemesis", zone: "it" },
   { realm: "Pozzo dell'Eternità", zone: "it" },
-  { realm: "Aggra", zone: "po" },
   { realm: "Ashenvale", zone: "ru" },
   { realm: "Azuregos", zone: "ru" },
   { realm: "Blackscar", zone: "ru" },
@@ -135,7 +137,6 @@ let realm = [
   { realm: "Galakrond", zone: "ru" },
   { realm: "Goldrinn", zone: "ru" },
   { realm: "Gordunni", zone: "ru" },
-  { realm: "Greymane", zone: "ru" },
   { realm: "Grom", zone: "ru" },
   { realm: "Howling Fjord", zone: "ru" },
   { realm: "Lich King", zone: "ru" },

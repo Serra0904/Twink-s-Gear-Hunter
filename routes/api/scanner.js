@@ -9,6 +9,9 @@ const Auction = require("../../models/Auctions");
 const User = require("../../models/User.js");
 const ServerCurrentlyScanned = require("../../models/ServerCurrentlyScanned.js");
 
+//* serveurs
+const realms = require("../../config/serverWow");
+
 // *tableau qui va contenir toutes les urls avec les data en json
 let urls = [];
 // *Tableau qui va contenir toutes les enchères en cours
@@ -25,275 +28,6 @@ let idItems = [
 ];
 
 /**
- * *LISTE DES ROYAUMES A SCANNER
- */
-let realm = [
-  { realm: "archimonde", zone: "fr" },
-  { realm: "arathi", zone: "fr" },
-  { realm: "Arak-arahm", zone: "fr" },
-  { realm: "Chants éternels", zone: "fr" },
-  { realm: "Cho'gall", zone: "fr" },
-  { realm: "Confrérie du Thorium", zone: "fr" },
-  { realm: "Culte de la Rive noire", zone: "fr" },
-  { realm: "Dalaran", zone: "fr" },
-  { realm: "Drek'Thar", zone: "fr" },
-  { realm: "Eitrigg", zone: "fr" },
-  { realm: "Eldre'Thalas", zone: "fr" },
-  { realm: "Elune", zone: "fr" },
-  { realm: "Garona", zone: "fr" },
-  { realm: "Hyjal", zone: "fr" },
-  { realm: "Illidan", zone: "fr" },
-  { realm: "Kael'thas", zone: "fr" },
-  { realm: "Khaz Modan", zone: "fr" },
-  { realm: "Kirin Tor", zone: "fr" },
-  { realm: "Krasus", zone: "fr" },
-  { realm: "La Croisade écarlate", zone: "fr" },
-  { realm: "Les Clairvoyants", zone: "fr" },
-  { realm: "Les Sentinelles", zone: "fr" },
-  { realm: "Marécage de Zangar", zone: "fr" },
-  { realm: "Medivh", zone: "fr" },
-  { realm: "Naxxramas", zone: "fr" },
-  { realm: "Ner'zhul", zone: "fr" },
-  { realm: "Rashgarroth", zone: "fr" },
-  { realm: "Sargeras", zone: "fr" },
-  { realm: "Sinstralis", zone: "fr" },
-  { realm: "Suramar", zone: "fr" },
-  { realm: "Temple noir", zone: "fr" },
-  { realm: "Throk'Feroth", zone: "fr" },
-  { realm: "Uldaman", zone: "fr" },
-  { realm: "Varimathras", zone: "fr" },
-  { realm: "Vol'jin", zone: "fr" },
-  { realm: "Ysondre", zone: "fr" },
-  { realm: "Aegwynn", zone: "ge" },
-  { realm: "Alexstrasza", zone: "ge" },
-  { realm: "Alleria", zone: "ge" },
-  { realm: "Aman'Thul", zone: "ge" },
-  { realm: "Ambossar", zone: "ge" },
-  { realm: "Anetheron", zone: "ge" },
-  { realm: "Antonidas", zone: "ge" },
-  { realm: "Anub'arak", zone: "ge" },
-  { realm: "Area 52", zone: "ge" },
-  { realm: "Arthas", zone: "ge" },
-  { realm: "Arygos", zone: "ge" },
-  { realm: "Azshara", zone: "ge" },
-  { realm: "Baelgun", zone: "ge" },
-  { realm: "Blackhand", zone: "ge" },
-  { realm: "Blackmoore", zone: "ge" },
-  { realm: "Blackrock", zone: "ge" },
-  { realm: "Blutkessel", zone: "ge" },
-  { realm: "Dalvengyr", zone: "ge" },
-  { realm: "Das Konsortium", zone: "ge" },
-  { realm: "Das Syndikat", zone: "ge" },
-  { realm: "Der Mithrilorden", zone: "ge" },
-  { realm: "Der Rat von Dalaran", zone: "ge" },
-  { realm: "Der abyssische Rat", zone: "ge" },
-  { realm: "Destromath", zone: "ge" },
-  { realm: "Dethecus", zone: "ge" },
-  { realm: "Die Aldor", zone: "ge" },
-  { realm: "Die Nachtwache", zone: "ge" },
-  { realm: "Die Silberne Hand", zone: "ge" },
-  { realm: "Die Todeskrallen", zone: "ge" },
-  { realm: "Dun Morogh", zone: "ge" },
-  { realm: "Durotan", zone: "ge" },
-  { realm: "Echsenkessel", zone: "ge" },
-  { realm: "Eredar", zone: "ge" },
-  { realm: "Festung der Stürme", zone: "ge" },
-  { realm: "Forscherliga", zone: "ge" },
-  { realm: "Frostmourne", zone: "ge" },
-  { realm: "Frostwolf", zone: "ge" },
-  { realm: "Garrosh", zone: "ge" },
-  { realm: "Gilneas", zone: "ge" },
-  { realm: "Gorgonnash", zone: "ge" },
-  { realm: "Gul'dan", zone: "ge" },
-  { realm: "Kargath", zone: "ge" },
-  { realm: "Kel'Thuzad", zone: "ge" },
-  { realm: "Khaz'goroth", zone: "ge" },
-  { realm: "Kil'jaeden", zone: "ge" },
-  { realm: "Krag'jin", zone: "ge" },
-  { realm: "Kult der Verdammten", zone: "ge" },
-  { realm: "Lordaeron", zone: "ge" },
-  { realm: "Lothar", zone: "ge" },
-  { realm: "Madmortem", zone: "ge" },
-  { realm: "Mal'Ganis", zone: "ge" },
-  { realm: "Malfurion", zone: "ge" },
-  { realm: "Malorne", zone: "ge" },
-  { realm: "Malygos", zone: "ge" },
-  { realm: "Mannoroth", zone: "ge" },
-  { realm: "Mug'thol", zone: "ge" },
-  { realm: "Nathrezim", zone: "ge" },
-  { realm: "Nazjatar", zone: "ge" },
-  { realm: "Nefarian", zone: "ge" },
-  { realm: "Nera'thor", zone: "ge" },
-  { realm: "Nethersturm", zone: "ge" },
-  { realm: "Norgannon", zone: "ge" },
-  { realm: "Nozdormu", zone: "ge" },
-  { realm: "Onyxia", zone: "ge" },
-  { realm: "Perenolde", zone: "ge" },
-  { realm: "Proudmoore", zone: "ge" },
-  { realm: "Rajaxx", zone: "ge" },
-  { realm: "Rexxar", zone: "ge" },
-  { realm: "Shattrath", zone: "ge" },
-  { realm: "Taerar", zone: "ge" },
-  { realm: "Teldrassil", zone: "ge" },
-  { realm: "Terrordar", zone: "ge" },
-  { realm: "Theradras", zone: "ge" },
-  { realm: "Thrall", zone: "ge" },
-  { realm: "Tichondrius", zone: "ge" },
-  { realm: "Tirion", zone: "ge" },
-  { realm: "Todeswache", zone: "ge" },
-  { realm: "Ulduar", zone: "ge" },
-  { realm: "Un'Goro", zone: "ge" },
-  { realm: "Vek'lor", zone: "ge" },
-  { realm: "Wrathbringer", zone: "ge" },
-  { realm: "Ysera", zone: "ge" },
-  { realm: "Zirkel des Cenarius", zone: "ge" },
-  { realm: "Zuluhed", zone: "ge" },
-  { realm: "Nemesis", zone: "it" },
-  { realm: "Pozzo dell'Eternità", zone: "it" },
-  { realm: "Ashenvale", zone: "ru" },
-  { realm: "Azuregos", zone: "ru" },
-  { realm: "Blackscar", zone: "ru" },
-  { realm: "Booty Bay", zone: "ru" },
-  { realm: "Borean Tundra", zone: "ru" },
-  { realm: "Deathguard", zone: "ru" },
-  { realm: "Deathweaver", zone: "ru" },
-  { realm: "Deepholm", zone: "ru" },
-  { realm: "Eversong", zone: "ru" },
-  { realm: "Fordragon", zone: "ru" },
-  { realm: "Galakrond", zone: "ru" },
-  { realm: "Goldrinn", zone: "ru" },
-  { realm: "Gordunni", zone: "ru" },
-  { realm: "Grom", zone: "ru" },
-  { realm: "Howling Fjord", zone: "ru" },
-  { realm: "Lich King", zone: "ru" },
-  { realm: "Razuvious", zone: "ru" },
-  { realm: "Soulflayer", zone: "ru" },
-  { realm: "Thermaplugg", zone: "ru" },
-  { realm: "C'Thun", zone: "es" },
-  { realm: "Colinas Pardas", zone: "es" },
-  { realm: "Dun Modr", zone: "es" },
-  { realm: "Exodar", zone: "es" },
-  { realm: "Los Errantes", zone: "es" },
-  { realm: "Minahonda", zone: "es" },
-  { realm: "Sanguino", zone: "es" },
-  { realm: "Shen'dralar", zone: "es" },
-  { realm: "Tyrande", zone: "es" },
-  { realm: "Uldum", zone: "es" },
-  { realm: "Zul'jin", zone: "es" },
-  { realm: "Tyrande", zone: "es" },
-  { realm: "Aerie Peak", zone: "uk" },
-  { realm: "Agamaggan", zone: "uk" },
-  { realm: "Aggramar", zone: "uk" },
-  { realm: "Ahn'Qiraj", zone: "uk" },
-  { realm: "Al'Akir", zone: "uk" },
-  { realm: "Alonsus", zone: "uk" },
-  { realm: "Anachronos", zone: "uk" },
-  { realm: "Arathor", zone: "uk" },
-  { realm: "Argent Dawn", zone: "uk" },
-  { realm: "Aszune", zone: "uk" },
-  { realm: "Auchindoun", zone: "uk" },
-  { realm: "Azjol-Nerub", zone: "uk" },
-  { realm: "Azuremyst", zone: "uk" },
-  { realm: "Balnazzar", zone: "uk" },
-  { realm: "Blade's Edge", zone: "uk" },
-  { realm: "Bladefist", zone: "uk" },
-  { realm: "Bloodfeather", zone: "uk" },
-  { realm: "Bloodhoof", zone: "uk" },
-  { realm: "Bloodscalp", zone: "uk" },
-  { realm: "Boulderfist", zone: "uk" },
-  { realm: "Bronze Dragonflight", zone: "uk" },
-  { realm: "Bronzebeard", zone: "uk" },
-  { realm: "Burning Blade", zone: "uk" },
-  { realm: "Burning Legion", zone: "uk" },
-  { realm: "Burning Steppes", zone: "uk" },
-  { realm: "Chamber of Aspects", zone: "uk" },
-  { realm: "Chromaggus", zone: "uk" },
-  { realm: "Crushridge", zone: "uk" },
-  { realm: "Daggerspine", zone: "uk" },
-  { realm: "Darkmoon Faire", zone: "uk" },
-  { realm: "Darksorrow", zone: "uk" },
-  { realm: "Darkspear", zone: "uk" },
-  { realm: "Deathwing", zone: "uk" },
-  { realm: "Defias Brotherhood", zone: "uk" },
-  { realm: "Dentarg", zone: "uk" },
-  { realm: "Doomhammer", zone: "uk" },
-  { realm: "Draenor", zone: "uk" },
-  { realm: "Dragonblight", zone: "uk" },
-  { realm: "Dragonmaw", zone: "uk" },
-  { realm: "Drak'thul", zone: "uk" },
-  { realm: "Dunemaul", zone: "uk" },
-  { realm: "Earthen Ring", zone: "uk" },
-  { realm: "Emerald Dream", zone: "uk" },
-  { realm: "Emeriss", zone: "uk" },
-  { realm: "Eonar", zone: "uk" },
-  { realm: "Executus", zone: "uk" },
-  { realm: "Frostmane", zone: "uk" },
-  { realm: "Frostwhisper", zone: "uk" },
-  { realm: "Genjuros", zone: "uk" },
-  { realm: "Ghostlands", zone: "uk" },
-  { realm: "Grim Batol", zone: "uk" },
-  { realm: "Hakkar", zone: "uk" },
-  { realm: "Haomarush", zone: "uk" },
-  { realm: "Hellfire", zone: "uk" },
-  { realm: "Hellscream", zone: "uk" },
-  { realm: "Jaedenar", zone: "uk" },
-  { realm: "Karazhan", zone: "uk" },
-  { realm: "Kazzak", zone: "uk" },
-  { realm: "Khadgar", zone: "uk" },
-  { realm: "Kilrogg", zone: "uk" },
-  { realm: "Kor'gall", zone: "uk" },
-  { realm: "Kul Tiras", zone: "uk" },
-  { realm: "Laughing Skull", zone: "uk" },
-  { realm: "Lightbringer", zone: "uk" },
-  { realm: "Lightning's Blade", zone: "uk" },
-  { realm: "Magtheridon", zone: "uk" },
-  { realm: "Mazrigos", zone: "uk" },
-  { realm: "Moonglade", zone: "uk" },
-  { realm: "Nagrand", zone: "uk" },
-  { realm: "Neptulon", zone: "uk" },
-  { realm: "Tyrande", zone: "uk" },
-  { realm: "Nordrassil", zone: "uk" },
-  { realm: "Outland", zone: "uk" },
-  { realm: "Quel'Thalas	", zone: "uk" },
-  { realm: "Ragnaros", zone: "uk" },
-  { realm: "Ravencrest", zone: "uk" },
-  { realm: "Ravenholdt", zone: "uk" },
-  { realm: "Runetotem", zone: "uk" },
-  { realm: "Saurfang", zone: "uk" },
-  { realm: "Scarshield Legion", zone: "uk" },
-  { realm: "Shadowsong", zone: "uk" },
-  { realm: "Shattered Halls", zone: "uk" },
-  { realm: "Shattered Hand", zone: "uk" },
-  { realm: "Silvermoon", zone: "uk" },
-  { realm: "Skullcrusher", zone: "uk" },
-  { realm: "Spinebreaker", zone: "uk" },
-  { realm: "Sporeggar", zone: "uk" },
-  { realm: "Steamwheedle Cartel", zone: "uk" },
-  { realm: "Stormrage", zone: "uk" },
-  { realm: "Stormreaver", zone: "uk" },
-  { realm: "Stormscale", zone: "uk" },
-  { realm: "Sunstrider", zone: "uk" },
-  { realm: "Sylvanas", zone: "uk" },
-  { realm: "Talnivarr", zone: "uk" },
-  { realm: "Tarren Mill", zone: "uk" },
-  { realm: "Terenas", zone: "uk" },
-  { realm: "Terokkar", zone: "uk" },
-  { realm: "The Maelstrom", zone: "uk" },
-  { realm: "The Sha'tar", zone: "uk" },
-  { realm: "The Venture Co", zone: "uk" },
-  { realm: "Thunderhorn", zone: "uk" },
-  { realm: "Trollbane", zone: "uk" },
-  { realm: "Turalyon", zone: "uk" },
-  { realm: "Twilight's Hammer", zone: "uk" },
-  { realm: "Twisting Nether", zone: "uk" },
-  { realm: "Vashj", zone: "uk" },
-  { realm: "Vek'nilash", zone: "uk" },
-  { realm: "Wildhammer", zone: "uk" },
-  { realm: "Xavius", zone: "uk" },
-  { realm: "Zenedar", zone: "uk" }
-];
-
-/**
  * *Je récupère le token de l'api wow dans la bdd (qui est refresh toutes les 6h) oui
  */
 let token = "";
@@ -306,28 +40,59 @@ User.find({ _id: "5d3c1c0b5270e926c0546526" })
   });
 
 /**
+ *
+ * @param {*} id
+ * @param {*} ilvl
+ * @param {*} item
+ */
+const notification = (numero, email, item = null) => {
+  //*Envoie du SMS de notification
+  const from = "GearHunter";
+  const to = numero;
+  const text = `
+    UN NOUVEL ITEM A ETE TROUVE
+    item : ${item.item}.
+    serveur : ${item.ownerRealm}.
+    prix : ${item.buyout} coppers.
+    `;
+  nexmo.message.sendSms(from, to, text);
+
+  //* Envoie du mail de notification
+  sendmail(
+    {
+      from: "twinkunivers@gmail.com",
+      to: email,
+      subject: "NOTIFICATION NOUVEL ITEM RARE",
+      html: `<h1>UN NOUVEL ITEM RARE A ÉTÉ TROUVÉ PAR GEAR HUNTER</h1> <a href='https://gearhunter.herokuapp.com/dashboard/items'>Voir tout</a> <br> <h1>&{item}</h1> `
+    },
+    function(err, reply) {
+      console.dir(reply);
+      if (!err) console.log("ok");
+      else console.log("error");
+    }
+  );
+};
+
+/**
  * @params Prend en paramètre l'id de l'item recherché, id, et l'ilvl, ilvl
  * *La fonction doit permettre de gérer dynamiquement les tests ilvl
  *
  */
 const findItem = (id, ilvl, item) => {
+  //*Vérification si l'id de l'enchère correspond à l'id recehrché
   if (id === item.item) {
+    //* si l'item de l'enchère n'a pas de bonus ILVL, je skip
     if (item.bonusLists !== undefined) {
+      //* Je vérifie si l'ilvl de l'item est dans la tableau des ilvl recherchés
+      console.log(item.bonusLists[0].bonusListId);
+      console.log(ilvl);
       if (ilvl.includes(item.bonusLists[0].bonusListId)) {
+        //* Je push l'item dans le tableau des enchères
         auctions.push(item);
-        sendmail(
-          {
-            from: "twinkunivers@gmail.com",
-            to: "twinkunivers@gmail.com",
-            subject: "NOTIFICATION NOUVEL ITEM RARE",
-            html: `<h1>UN NOUVEL ITEM RARE A ÉTÉ TROUVÉ PAR GEAR HUNTER</h1> <a href='https://gearhunter.herokuapp.com/dashboard/items'>Voir tout</a> <br> <h1>&{item}</h1> `
-          },
-          function(err, reply) {
-            console.dir(reply);
-            if (!err) console.log("ok");
-            else console.log("error");
-          }
-        );
+
+        notification("33784006727", "twinkunivers@gmail.com", item);
+
+        console.log(item);
         console.log(
           "************************* ITEM 28 ILVL FOUND ***************************"
         );
@@ -335,9 +100,13 @@ const findItem = (id, ilvl, item) => {
         console.log(
           "******************************************************************"
         );
+      } else if (item.bonusLists === undefined && ilvl.includes(0)) {
+        console.log("ITEM RARE SANS ILVL TROUVE");
+        console.log(item);
+      } else {
+        console.log("wrong ilvl");
+        //console.log(item);
       }
-    } else {
-      console.log("wrong ilevel..");
     }
   }
 };
@@ -357,7 +126,7 @@ const getUrls = async () => {
 
   console.log(token);
 
-  let ArrayUrls = realm.map(async scan => {
+  let ArrayUrls = realms.map(async scan => {
     await axios
       .get(
         `https://eu.api.blizzard.com/wow/auction/data/${scan.realm}?locale=fr_FR&access_token=${token}`
