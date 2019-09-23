@@ -6,8 +6,8 @@ let realm = [
   { realm: "arathi", zone: "fr" },
   { realm: "Arak-arahm", zone: "fr" },
   { realm: "Chants éternels", zone: "fr" },
-  { realm: "Cho'gall", zone: "fr" }
-  /*{ realm: "Confrérie du Thorium", zone: "fr" },
+  { realm: "Cho'gall", zone: "fr" },
+  { realm: "Confrérie du Thorium", zone: "fr" },
   { realm: "Culte de la Rive noire", zone: "fr" },
   { realm: "Dalaran", zone: "fr" },
   { realm: "Drek'Thar", zone: "fr" },
@@ -264,7 +264,7 @@ let realm = [
   { realm: "Vek'nilash", zone: "uk" },
   { realm: "Wildhammer", zone: "uk" },
   { realm: "Xavius", zone: "uk" },
-  { realm: "Zenedar", zone: "uk" }*/
+  { realm: "Zenedar", zone: "uk" }
 ];
 
 module.exports = realm;
