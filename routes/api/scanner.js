@@ -4,10 +4,11 @@ const keys = require("../../config/keys");
 const axios = require("axios");
 const sendmail = require("sendmail")({ silent: true });
 
-// * Je charge le modèle des enchères
+// * Je charge les modèles de base de données dont j'ai besoin
 const Auction = require("../../models/Auctions");
 const User = require("../../models/User.js");
 const ServerCurrentlyScanned = require("../../models/ServerCurrentlyScanned.js");
+const ItemSearched = require("../../models/ItemSearched");
 
 //* serveurs
 const realms = require("../../config/serverWow");
@@ -16,16 +17,18 @@ const realms = require("../../config/serverWow");
 let urls = [];
 // *Tableau qui va contenir toutes les enchères en cours
 var auctions = [];
+// *Tableau qui va contenir les items à chercher
+let idItems = [];
 
 // * Tableau qui va contenir les id des items recherchés par l'utilisateu
-let idItems = [
+/*let idItems = [
   [1121, [3901]],
   [12994, [3901]],
   [2911, [3901]],
   [12987, [3901]],
   [12977, [3901]],
   [4446, [3901]]
-];
+];*/
 
 /**
  * *Je récupère le token de l'api wow dans la bdd (qui est refresh toutes les 6h) oui
@@ -124,7 +127,14 @@ const getUrls = async () => {
   // *Je réinitialise le tableau des enchères
   auctions = [];
 
-  console.log(token);
+  await ItemSearched.find({ _id: "5d88820b91b1900904cab8f7" })
+    .then(response => {
+      console.log(response[0].items);
+      idItems = response[0].items;
+    })
+    .catch(error => {
+      console.log(error);
+    });
 
   let ArrayUrls = realms.map(async scan => {
     await axios
@@ -143,7 +153,7 @@ const getUrls = async () => {
   });
 
   /**
-   * *Attends que toutes les urls soient piush dans le tableau avant de résoudre,
+   * *Attends que toutes les urls soient push dans le tableau avant de résoudre,
    * *afin d'éviter que axios ne plante (trop de requête en même temps)
    */
   await Promise.all(ArrayUrls);

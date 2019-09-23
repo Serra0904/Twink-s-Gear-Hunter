@@ -72,6 +72,7 @@ const from = "GearHunter";
 const to = "33638503252";
 const text = "Démarrage des serveurs de GearHunter...";
 /*nexmo.message.sendSms(from, to, text);*/
+
 // *Serve static assets if we are in production
 if (process.env.NODE_ENV === "production") {
   // set static folder*

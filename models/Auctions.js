@@ -17,4 +17,4 @@ const AuctionSchema = new Schema({
   }
 });
 
-module.exports = User = mongoose.model("auctions", AuctionSchema);
+module.exports = Auction = mongoose.model("auctions", AuctionSchema);

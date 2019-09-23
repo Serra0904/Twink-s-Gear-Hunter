@@ -17,7 +17,7 @@ const ServerCurrentlyScanned = new Schema({
   }
 });
 
-module.exports = User = mongoose.model(
+module.exports = ServerScanned = mongoose.model(
   "serverCurrentlyScanned",
   ServerCurrentlyScanned
 );
