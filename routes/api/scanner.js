@@ -269,7 +269,7 @@ setTimeout(() => {
 
 setInterval(() => {
   getUrls();
-}, 3000000);
+}, 2000000);
 
 // @route GET api/scanner/scann
 // @desc Récupère la dernière enchère
