@@ -50,6 +50,7 @@ class items extends Component {
     let currentAuction = this.state.auctions[0].auctions.map(auction => {
       let prix = auction.buyout / 10000;
       console.log(auction);
+
       return (
         <div className="col s12 m4">
           <div className="card">
@@ -59,6 +60,18 @@ class items extends Component {
                 alt=""
               />
               <span className="card-title">Id de l'item : {auction.item}</span>
+              <span className="card-title">
+                Nom de l'item :
+                {auction.item === 12987
+                  ? " Brai des ombres"
+                  : auction.item === 12994
+                  ? "Gantelet de thorbia"
+                  : auction.item === 2911
+                  ? "Ceinturon de Keller"
+                  : auction.item === 1121
+                  ? "Bottes du lynx"
+                  : "error"}
+              </span>
             </div>
             <div className="card-content">
               <p>Serveur : {auction.ownerRealm}</p>
