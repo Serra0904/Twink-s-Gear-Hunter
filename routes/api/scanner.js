@@ -3,6 +3,12 @@ const router = express.Router();
 const keys = require("../../config/keys");
 const axios = require("axios");
 const sendmail = require("sendmail")({ silent: true });
+const Nexmo = require("nexmo");
+
+const nexmo = new Nexmo({
+  apiKey: "68216ee7",
+  apiSecret: "rUiSBsUTKxRDJ49t"
+});
 
 // * Je charge les modèles de base de données dont j'ai besoin
 const Auction = require("../../models/Auctions");
@@ -19,16 +25,6 @@ let urls = [];
 var auctions = [];
 // *Tableau qui va contenir les items à chercher
 let idItems = [];
-
-// * Tableau qui va contenir les id des items recherchés par l'utilisateu
-/*let idItems = [
-  [1121, [3901]],
-  [12994, [3901]],
-  [2911, [3901]],
-  [12987, [3901]],
-  [12977, [3901]],
-  [4446, [3901]]
-];*/
 
 /**
  * *Je récupère le token de l'api wow dans la bdd (qui est refresh toutes les 6h) oui
