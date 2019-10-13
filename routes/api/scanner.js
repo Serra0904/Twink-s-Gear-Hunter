@@ -86,19 +86,21 @@ const findItem = (id, ilvl, item) => {
       console.log(item.bonusLists[0].bonusListId);
       console.log(ilvl);
       if (ilvl.includes(item.bonusLists[0].bonusListId)) {
-        //* Je push l'item dans le tableau des enchères
-        auctions.push(item);
+        if (item.owner !== "Htâg") {
+          //* Je push l'item dans le tableau des enchères
+          auctions.push(item);
 
-        notification("33784006727", "twinkunivers@gmail.com", item);
+          notification("33784006727", "twinkunivers@gmail.com", item);
 
-        console.log(item);
-        console.log(
-          "************************* ITEM 28 ILVL FOUND ***************************"
-        );
-        console.log(item);
-        console.log(
-          "******************************************************************"
-        );
+          console.log(item);
+          console.log(
+            "************************* ITEM 28 ILVL FOUND ***************************"
+          );
+          console.log(item);
+          console.log(
+            "******************************************************************"
+          );
+        }
       } else if (item.bonusLists === undefined && ilvl.includes(0)) {
         console.log("ITEM RARE SANS ILVL TROUVE");
         console.log(item);
