@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import { connect } from "react-redux";
 
@@ -33,13 +34,19 @@ function ListeItem(props) {
   return (
     <div style={{ minHeight: "75vh" }} className="container">
       <div className="row" style={{ width: "100%" }}>
-        <div className="landing-copy col s12 center-align">
+        <div className="landing-copy col s12 m11 center-align">
           <h4>
             <p className="flow-text grey-text text-darken-1">
               Liste de vos <b>items..</b>
             </p>
           </h4>
         </div>
+        <Link
+          to="item/create"
+          class="btn-floating btn-large waves-effect waves-light red m1 s12 center-right"
+        >
+          <i class="material-icons">add</i>
+        </Link>
       </div>
 
       <div className="row">{listItems}</div>
