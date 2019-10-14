@@ -68,13 +68,12 @@ setInterval(() => {
 app.use("/api/users", users);
 app.use("/api/scanner", scanner);
 
-const from = "GearHunter";
-const to = "33638503252";
-const text = "Démarrage des serveurs de GearHunter...";
-nexmo.message.sendSms(from, to, text);
-
 // *Serve static assets if we are in production
 if (process.env.NODE_ENV === "production") {
+  const from = "GearHunter";
+  const to = "33638503252";
+  const text = "Démarrage des serveurs de GearHunter...";
+  nexmo.message.sendSms(from, to, text);
   // set static folder*
   app.use(express.static("client/build"));
   app.get("*", (req, res) => {

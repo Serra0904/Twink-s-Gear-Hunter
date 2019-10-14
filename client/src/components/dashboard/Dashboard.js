@@ -23,7 +23,7 @@ class Dashboard extends Component {
                 Tu es connecté. Que souhaites-tu faire ?
               </p>
             </h4>
-            <Link to="/dashboard/items">
+            <Link to="/dashboard/auctions">
               <button
                 style={{
                   borderRadius: "3px",

@@ -1,21 +1,19 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import jwt_decode from "jwt-decode";
-import setAuthToken from "./utils/setAuthToken";
+import setAuthToken from "../../utils/setAuthToken";
 
-import { setCurrentUser, logoutUser } from "./actions/authActions";
+import { setCurrentUser, logoutUser } from "../../actions/authActions";
 import { Provider } from "react-redux";
-import store from "./store";
+import store from "../../store";
 
-import Navbar from "./components/layout/Navbar";
-import Landing from "./components/layout/Landing";
-import Register from "./components/auth/Register";
-import Login from "./components/auth/Login";
-import PrivateRoute from "./components/private-route/PrivateRoute";
-import items from "./components/dashboard/items";
-import Dashboard from "./components/dashboard/Dashboard";
-
-import "./App.css";
+import Navbar from "../layout/Navbar";
+import Landing from "../layout/Landing";
+import Register from "../auth/Register";
+import Login from "../auth/Login";
+import PrivateRoute from "../private-route/PrivateRoute";
+import Auctions from "../dashboard/auctions/Auctions";
+import Dashboard from "../dashboard/Dashboard";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -50,7 +48,11 @@ class App extends Component {
 
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
-              <PrivateRoute exact path="/dashboard/items" component={items} />
+              <PrivateRoute
+                exact
+                path="/dashboard/auctions"
+                component={Auctions}
+              />
             </Switch>
           </div>
         </Router>
