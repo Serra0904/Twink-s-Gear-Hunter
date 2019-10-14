@@ -5,7 +5,10 @@ let realm = [
   { realm: "archimonde", zone: "fr" },
   { realm: "arathi", zone: "fr" },
   { realm: "Arak-arahm", zone: "fr" },
-  { realm: "Chants éternels", zone: "fr" },
+  {
+    realm: "Chants éternels",
+    zone: "fr"
+  },
   { realm: "Cho'gall", zone: "fr" },
   { realm: "Confrérie du Thorium", zone: "fr" },
   { realm: "Culte de la Rive noire", zone: "fr" },

@@ -14,6 +14,7 @@ import Login from "../auth/Login";
 import PrivateRoute from "../private-route/PrivateRoute";
 import Auctions from "../dashboard/auctions/Auctions";
 import Dashboard from "../dashboard/Dashboard";
+import listItems from "../dashboard/Items/ListeItem";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -52,6 +53,11 @@ class App extends Component {
                 exact
                 path="/dashboard/auctions"
                 component={Auctions}
+              />
+              <PrivateRoute
+                exact
+                path="/dashboard/listItems"
+                component={listItems}
               />
             </Switch>
           </div>
