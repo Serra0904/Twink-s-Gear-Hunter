@@ -110,6 +110,20 @@ const findItem = (id, ilvl, item) => {
         console.log("wrong ilvl");
         //console.log(item);
       }
+    } else if (item.item === 6199) {
+      //* J'initialise un checkeur à false
+      let checkAlreadyExist = false;
+
+      //* Je map sur le tableau d'auctions pour vérifier si l'encher n'existe pas déjà
+      auctions.map(auction => {
+        auction.auc === item.auc ? (checkAlreadyExist = true) : "";
+      });
+
+      //* Je push l'item dans le tableau des enchères
+      if (!checkAlreadyExist) {
+        auctions.push(item);
+        notification("33784006727", "twinkunivers@gmail.com", item);
+      }
     }
   }
 };
