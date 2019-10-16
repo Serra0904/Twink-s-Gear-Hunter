@@ -109,8 +109,8 @@ const findItem = (id, ilvl, item) => {
         //console.log(item);
       }
     } else if (item.bonusLists === undefined && ilvl.includes(0)) {
-      console.log("ITEM RARE SANS ILVL TROUVE");
-      console.log(item);
+      auctions.push(item);
+      notification("33784006727", "twinkunivers@gmail.com", item);
     }
   }
 };
