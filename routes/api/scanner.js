@@ -88,7 +88,6 @@ const findItem = (id, ilvl, item) => {
 
       if (ilvl.includes(item.bonusLists[0].bonusListId)) {
         //* Je vérifie si le vendeur de l'objet n'est pas Htag, devra-t-être dynamique par la suite
-        if (item.owner !== "Htâg") {
           //* J'initialise un checkeur à false
           let checkAlreadyExist = false;
 
@@ -102,7 +101,6 @@ const findItem = (id, ilvl, item) => {
             auctions.push(item);
             notification("33784006727", "twinkunivers@gmail.com", item);
           }
-        }
       } else if (item.bonusLists === undefined && ilvl.includes(0)) {
         console.log("ITEM RARE SANS ILVL TROUVE");
         console.log(item);
@@ -110,7 +108,11 @@ const findItem = (id, ilvl, item) => {
         console.log("wrong ilvl");
         //console.log(item);
       }
-    } else if (item.item === 6199) {
+    } else if (item.bonusLists === undefined && ilvl.includes(0)) {
+      console.log("ITEM RARE SANS ILVL TROUVE");
+      console.log(item);
+    }
+    else(item.item === 6199) {
       //* J'initialise un checkeur à false
       let checkAlreadyExist = false;
 
