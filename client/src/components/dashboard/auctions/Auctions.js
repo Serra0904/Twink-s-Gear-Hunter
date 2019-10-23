@@ -34,7 +34,7 @@ class items extends Component {
       return (
         <Item
           owner={auction.owner}
-          owernerRealm={auction.owernerRealm}
+          ownerRealm={auction.ownerRealm}
           item={auction.item}
           buyout={auction.buyout}
           timeLeft={auction.timeLeft}
