@@ -22,6 +22,10 @@ const UserSchema = new Schema({
   token: {
     type: String,
     required: false
+  },
+  itemsSearched: {
+    type: Array,
+    required: false
   }
 });
 

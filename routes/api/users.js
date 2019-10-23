@@ -78,6 +78,7 @@ router.post("/login", (req, res) => {
       if (isMatch) {
         // User matched
         // Create JWT Payload
+        console.log(user);
         const payload = {
           id: user.id,
           name: user.name
@@ -104,6 +105,20 @@ router.post("/login", (req, res) => {
           .json({ passwordincorrect: "Password incorrect" });
       }
     });
+  });
+});
+
+// @route POST api/users/itemsSearched
+// @desc Return items searched by user
+// @access Public
+router.post("/itemsSearched", (req, res) => {
+  idUser = req.body.userId;
+  console.log(idUser);
+  User.find({ _id: idUser }).then(user => {
+    console.log(user);
+    user
+      ? res.json(user[0].itemsSearched).status(200)
+      : res.json("error").status(500);
   });
 });
 

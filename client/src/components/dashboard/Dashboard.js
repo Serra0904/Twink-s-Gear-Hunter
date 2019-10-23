@@ -23,7 +23,7 @@ class Dashboard extends Component {
                 Tu es connecté. Que souhaites-tu faire ?
               </p>
             </h4>
-            <Link to="/dashboard/items">
+            <Link to="/dashboard/auctions">
               <button
                 style={{
                   borderRadius: "3px",
@@ -36,16 +36,18 @@ class Dashboard extends Component {
               </button>
             </Link>
             <br />
-            <button
-              style={{
-                borderRadius: "3px",
-                letterSpacing: "1.5px",
-                marginTop: "1rem"
-              }}
-              className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-            >
-              Gérer mes objets
-            </button>
+            <Link to="/dashboard/listItems">
+              <button
+                style={{
+                  borderRadius: "3px",
+                  letterSpacing: "1.5px",
+                  marginTop: "1rem"
+                }}
+                className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+              >
+                Gérer mes objets
+              </button>
+            </Link>
           </div>
         </div>
       </div>

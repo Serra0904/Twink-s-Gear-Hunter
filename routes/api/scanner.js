@@ -85,21 +85,25 @@ const findItem = (id, ilvl, item) => {
       //* Je vérifie si l'ilvl de l'item est dans la tableau des ilvl recherchés
       console.log(item.bonusLists[0].bonusListId);
       console.log(ilvl);
+
       if (ilvl.includes(item.bonusLists[0].bonusListId)) {
-        if (item.owner !== "Htâg") {
+        //* Je vérifie si le vendeur de l'objet n'est pas Htag, devra-t-être dynamique par la suite
+        if (item.owner === "Htâg") {
+          console.log("VENDU PAR HTAG");
+        } else {
+          //* J'initialise un checkeur à false
+          let checkAlreadyExist = false;
+
+          //* Je map sur le tableau d'auctions pour vérifier si l'encher n'existe pas déjà
+          auctions.map(auction => {
+            auction.auc === item.auc ? (checkAlreadyExist = true) : "";
+          });
+
           //* Je push l'item dans le tableau des enchères
-          auctions.push(item);
-
-          notification("33784006727", "twinkunivers@gmail.com", item);
-
-          console.log(item);
-          console.log(
-            "************************* ITEM 28 ILVL FOUND ***************************"
-          );
-          console.log(item);
-          console.log(
-            "******************************************************************"
-          );
+          if (!checkAlreadyExist) {
+            auctions.push(item);
+            notification("33784006727", "twinkunivers@gmail.com", item);
+          }
         }
       } else if (item.bonusLists === undefined && ilvl.includes(0)) {
         console.log("ITEM RARE SANS ILVL TROUVE");
@@ -108,6 +112,9 @@ const findItem = (id, ilvl, item) => {
         console.log("wrong ilvl");
         //console.log(item);
       }
+    } else if (item.bonusLists === undefined && ilvl.includes(0)) {
+      auctions.push(item);
+      notification("33784006727", "twinkunivers@gmail.com", item);
     }
   }
 };
