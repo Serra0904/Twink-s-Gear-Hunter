@@ -1,6 +1,7 @@
 import React from "react";
 
 export default function Items(props) {
+  console.log(props);
   return (
     <div className="col s12 m4">
       <div className="card">
