@@ -48,12 +48,12 @@ class items extends Component {
           <div className="landing-copy col s12 center-align">
             <h4>
               <p className="flow-text grey-text text-darken-1">
-                Enchères en <b>cours..</b>
+                Current <b>bidding..</b>
               </p>
             </h4>
             <h6>
               <p>
-                Le dernier scann s'est terminé à :
+                Last scan ended at :
                 {this.state.auctions[0].date ? (
                   <Moment interval={0} format="HH:mm">
                     {this.state.auctions[0].date}
@@ -64,14 +64,14 @@ class items extends Component {
               </p>
             </h6>
             <h6>
-              les serveurs <CurrentlyScanned /> sont en train d'être scannés...
+               <CurrentlyScanned /> currently scanned...
             </h6>
           </div>
         </div>
 
         <div className="row">
           {currentAuction.length === 0
-            ? "Aucun item disponible..."
+            ? "No item available..."
             : currentAuction}
         </div>
       </div>

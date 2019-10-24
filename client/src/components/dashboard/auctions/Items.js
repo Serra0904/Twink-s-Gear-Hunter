@@ -17,7 +17,7 @@ export default function Items(props) {
               fontSize: "1.2rem"
             }}
           >
-            Nom de l'item :
+            Item Name :
             {props.item === 12987
               ? " Brai des ombres"
               : props.item === 12994
@@ -34,15 +34,15 @@ export default function Items(props) {
           </span>
         </div>
         <div className="card-content">
-          <p>Serveur : {props.ownerRealm}</p>
-          <p>Vendeur : {props.owner}</p>
-          <p>Prix : {props.buyout / 10000} POs</p>
-          <p>Temps restant : {props.timeLeft}</p>
+          <p>Server : {props.ownerRealm}</p>
+          <p>Seller : {props.owner}</p>
+          <p>Price : {props.buyout / 10000} POs</p>
+          <p>Time left : {props.timeLeft}</p>
           <p>Ilvl : 28</p>
           <p>id item : {props.item} </p>
         </div>
         <div className="card-action">
-          <a href="#">Disponible..</a>
+          <a href="#">Available..</a>
         </div>
       </div>
     </div>

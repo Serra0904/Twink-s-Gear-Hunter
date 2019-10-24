@@ -166,7 +166,6 @@ const getUrls = async () => {
   /**
    * *Une fois toutes les urls obtenues et stockés dans le tableau urls, on lance la fonction fetchUrls
    */
-  //fetchUrls();
   fetchUrls(urls);
   console.log(urls);
 };
@@ -289,9 +288,9 @@ router.post("/get/all", (req, res) => {
     .limit(1);
 });
 
-// @route GET api/scanner/lastServerScanned
-// @desc ROUTE QUI ME PERMET DE RECUP LE DERNIER SERVEUR SCANN DEPUIS LE FRONT
-// @access Public
+/** @route GET api/scanner/lastServerScanned */
+/** @desc ROUTE QUI ME PERMET DE RECUP LE DERNIER SERVEUR SCANN DEPUIS LE FRONT */
+/** @access Public */
 router.post("/get/lastServerScanned", (req, res) => {
   ServerCurrentlyScanned.find({}, (err, servers) => {
     if (err) return res.json("error").status(401);
