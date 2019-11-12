@@ -1,0 +1,12 @@
+{
+    "files.autoSave": "afterDelay",
+    "editor.formatOnSave": true,
+    "eslint.autoFixOnSave": true,
+    "beautify.language": {
+        "html": ["html", "php", "erb"],
+        "css": [],
+        "js": []
+    },
+    "editor.fontFamily": "Victor Mono",
+    "editor.fontLigatures": true
+}
