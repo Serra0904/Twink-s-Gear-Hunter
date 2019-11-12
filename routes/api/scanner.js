@@ -33,8 +33,8 @@ let idItems = [];
  */
 let token = "";
 User.find({
-    _id: "5d3c1c0b5270e926c0546526"
-  })
+  _id: "5d3c1c0b5270e926c0546526"
+})
   .then(response => {
     token = response[0].token;
   })
@@ -61,13 +61,14 @@ const notification = (numero, email, item = null) => {
   nexmo.message.sendSms(from, to, text);
 
   //* Envoie du mail de notification
-  sendmail({
+  sendmail(
+    {
       from: "twinkunivers@gmail.com",
       to: email,
       subject: "NOTIFICATION NOUVEL ITEM RARE",
       html: `<h1>UN NOUVEL ITEM RARE A ÉTÉ TROUVÉ PAR GEAR HUNTER</h1> <a href='https://gearhunter.herokuapp.com/dashboard/items'>Voir tout</a> <br> <h1>&{item}</h1> `
     },
-    function (err, reply) {
+    function(err, reply) {
       console.dir(reply);
       if (!err) console.log("ok");
       else console.log("error");
@@ -91,7 +92,7 @@ const findItem = (id, ilvl, item) => {
 
       if (ilvl.includes(item.bonusLists[0].bonusListId)) {
         //* Je vérifie si le vendeur de l'objet n'est pas Htag, devra-t-être dynamique par la suite
-        if (item.owner === "Htâg") {
+        if (item.owner === "Htâg" || item.buyout > 150000000) {
           console.log("VENDU PAR HTAG");
         } else {
           //* J'initialise un checkeur à false
@@ -136,8 +137,8 @@ const getUrls = async () => {
   auctions = [];
 
   await ItemSearched.find({
-      _id: "5d88820b91b1900904cab8f7"
-    })
+    _id: "5d88820b91b1900904cab8f7"
+  })
     .then(response => {
       console.log(response[0].items);
       idItems = response[0].items;
@@ -234,13 +235,15 @@ const fetchUrls = arr => {
               .then(response => {
                 console.log(response);
                 if (auctions.length > 0) {
-                  sendmail({
+                  sendmail(
+                    {
                       from: "twinkunivers@gmail.com",
                       to: "twinkunivers@gmail.com",
                       subject: "NOTIFICATION NOUVEL ITEM RARE",
-                      html: "<h1>UN NOUVEL ITEM RARE A ÉTÉ TROUVÉ PAR GEAR HUNTER</h1> <a href='https://gearhunter.herokuapp.com/dashboard/items'>Voir tout</a> "
+                      html:
+                        "<h1>UN NOUVEL ITEM RARE A ÉTÉ TROUVÉ PAR GEAR HUNTER</h1> <a href='https://gearhunter.herokuapp.com/dashboard/items'>Voir tout</a> "
                     },
-                    function (err, reply) {
+                    function(err, reply) {
                       console.dir(reply);
                       // *Je réinitialise le tableau des enchères
                       if (!err) console.log("ok");
@@ -284,9 +287,9 @@ setInterval(() => {
 router.post("/get/all", (req, res) => {
   console.log(req.body);
   Auction.find({}, (err, auctions) => {
-      if (err) return res.json("error").status(401);
-      else return res.json(auctions).status(200);
-    })
+    if (err) return res.json("error").status(401);
+    else return res.json(auctions).status(200);
+  })
     .sort({
       $natural: -1
     })
@@ -298,9 +301,9 @@ router.post("/get/all", (req, res) => {
 /** @access Public */
 router.post("/get/lastServerScanned", (req, res) => {
   ServerCurrentlyScanned.find({}, (err, servers) => {
-      if (err) return res.json("error").status(401);
-      else return res.json(servers).status(200);
-    })
+    if (err) return res.json("error").status(401);
+    else return res.json(servers).status(200);
+  })
     .sort({
       $natural: -1
     })
