@@ -9,7 +9,7 @@ class Landing extends Component {
           <div className="col s12 center-align">
             <h4>
               <b>Find</b> your twink item's <br />
-              through auctionals of all european servers..
+              through auctions house of all european servers..
               <br /> <b>In same time.</b>
             </h4>
             <p className="flow-text grey-text text-darken-1">
