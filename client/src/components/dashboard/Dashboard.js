@@ -18,9 +18,9 @@ class Dashboard extends Component {
         <div className="row">
           <div className="landing-copy col s12 center-align">
             <h4>
-              <b>Bonjour,</b> {user.name.split(" ")[0]}
+              <b>Hi,</b> {user.name.split(" ")[0]}
               <p className="flow-text grey-text text-darken-1">
-                Tu es connecté. Que souhaites-tu faire ?
+                You are connected. What do you want to dp ?
               </p>
             </h4>
             <Link to="/dashboard/auctions">
@@ -32,11 +32,11 @@ class Dashboard extends Component {
                 }}
                 className="btn btn-large waves-effect waves-light hoverable blue accent-3"
               >
-                Consulter les ventes
+                Check sells
               </button>
             </Link>
             <br />
-            <Link to="/dashboard/listItems">
+            {/*<Link to="/dashboard/listItems">
               <button
                 style={{
                   borderRadius: "3px",
@@ -47,7 +47,7 @@ class Dashboard extends Component {
               >
                 Gérer mes objets
               </button>
-            </Link>
+              </Link>*/}
           </div>
         </div>
       </div>
@@ -64,7 +64,4 @@ const mapStateToProps = state => ({
   auth: state.auth
 });
 
-export default connect(
-  mapStateToProps,
-  { logoutUser }
-)(Dashboard);
+export default connect(mapStateToProps, { logoutUser })(Dashboard);
