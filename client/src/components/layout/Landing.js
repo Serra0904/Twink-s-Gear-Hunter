@@ -33,7 +33,6 @@ class Landing extends Component {
               <a
                 href="https://discord.gg/HPnrPxk"
                 style={{
-                  width: "140px",
                   borderRadius: "3px",
                   letterSpacing: "1.5px"
                 }}
