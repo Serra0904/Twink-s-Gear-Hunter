@@ -8,13 +8,13 @@ class Landing extends Component {
         <div className="row">
           <div className="col s12 center-align">
             <h4>
-              <b>Cherche</b> l'item de ton choix <br />à travers tous les hôtels
-              de vente du jeu.
-              <br /> <b>En même temps.</b>
+              <b>Find</b> your twink item's <br />
+              through auctional of all european servers..
+              <br /> <b>In same time.</b>
             </h4>
             <p className="flow-text grey-text text-darken-1">
-              Augmente ta rentabilité et garde un coup d'avance sur tes
-              concurrents.
+              Increase your profitability and stay one step ahead of your
+              competitors.
             </p>
             <br />
             <div className="col s12">
@@ -29,6 +29,19 @@ class Landing extends Component {
               >
                 Connexion
               </Link>
+            </div>
+            <div className="col s12">
+              <a
+                href="https://discord.gg/HPnrPxk"
+                style={{
+                  width: "140px",
+                  borderRadius: "3px",
+                  letterSpacing: "1.5px"
+                }}
+                className="btn btn-large btn-flat waves-effect white black-text"
+              >
+                Dont have account ? contact us on Discord.
+              </a>
             </div>
           </div>
         </div>
