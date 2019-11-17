@@ -92,22 +92,19 @@ const findItem = (id, ilvl, item) => {
 
       if (ilvl.includes(item.bonusLists[0].bonusListId)) {
         //* Je vérifie si le vendeur de l'objet n'est pas Htag, devra-t-être dynamique par la suite
-        if (item.owner === "Htâg" || item.buyout > 150000000) {
-          console.log("VENDU PAR HTAG");
-        } else {
-          //* J'initialise un checkeur à false
-          let checkAlreadyExist = false;
 
-          //* Je map sur le tableau d'auctions pour vérifier si l'encher n'existe pas déjà
-          auctions.map(auction => {
-            auction.auc === item.auc ? (checkAlreadyExist = true) : "";
-          });
+        //* J'initialise un checkeur à false
+        let checkAlreadyExist = false;
 
-          //* Je push l'item dans le tableau des enchères
-          if (!checkAlreadyExist) {
-            auctions.push(item);
-            notification("33784006727", "twinkunivers@gmail.com", item);
-          }
+        //* Je map sur le tableau d'auctions pour vérifier si l'encher n'existe pas déjà
+        auctions.map(auction => {
+          auction.auc === item.auc ? (checkAlreadyExist = true) : "";
+        });
+
+        //* Je push l'item dans le tableau des enchères
+        if (!checkAlreadyExist) {
+          auctions.push(item);
+          notification("33784006727", "twinkunivers@gmail.com", item);
         }
       } else if (item.bonusLists === undefined && ilvl.includes(0)) {
         console.log("ITEM RARE SANS ILVL TROUVE");
